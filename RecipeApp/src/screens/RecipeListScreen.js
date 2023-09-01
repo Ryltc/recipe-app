@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 const RecipeListScreen = () => {
     return (
-        <SafeAreaView style={{ flex: 1, marginHorizontal: 16 }}>
+        <SafeAreaView style={{ flex: 1, marginHorizontal: 20, marginTop: 50,  }}>
             <Header headerText={"Hi, John "} headerIcon={"bell-o"}/>
         </SafeAreaView>
     );
