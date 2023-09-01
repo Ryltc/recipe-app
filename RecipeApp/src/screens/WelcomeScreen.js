@@ -21,7 +21,7 @@ const WelcomeScreen = ( { navigation }) => {
                 Cook Like Hector
             </Text>
 
-            <TouchableOpacity 
+            <TouchableOpacity
             onPress={()=>navigation.navigate("RecipeList")}
             style={{
                 backgroundColor: "#f96163",

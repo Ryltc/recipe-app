@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View  } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, ScrollView  } from "react-native";
 import React from "react";
+import Header from "../components/Header";
 
 const RecipeListScreen = () => {
     return (
-        <View>
-            <Text>RecipeListScreen</Text>
-        </View>
+        <SafeAreaView style={{ flex: 1, marginHorizontal: 16 }}>
+            <Header headerText={"Hi, John "} headerIcon={"bell-o"}/>
+        </SafeAreaView>
     );
 };
 
