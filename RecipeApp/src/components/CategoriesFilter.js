@@ -13,9 +13,9 @@ const CategoriesFilter = () => {
 							style={{
 								backgroundColor:
 									index === 0 ? colors.COLOR_PRIMARY : colors.COLOR_LIGHT,
-								marginRight: 36,
+								marginRight: 40,
 								borderRadius: 8,
-								paddingHorizontal: 16,
+								paddingHorizontal: 30,
 								paddingVertical: 10,
 								shadowColor: "#000",
 								shadowOffset: { width: 0, height: 4 },
@@ -28,6 +28,7 @@ const CategoriesFilter = () => {
 								style={{
 									color: index === 0 && colors.COLOR_LIGHT,
 									fontSize: 18,
+									fontWeight: 400,
 								}}
 							>
 								{category.category}

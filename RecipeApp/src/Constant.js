@@ -40,6 +40,14 @@ export const categories = [
 		id: "08",
 		category: "Seafood",
 	},
+	{
+		id: "09",
+		category: "Haitian",
+	},
+	{
+		id: "10",
+		category: "Latin-American",
+	},
 ];
 
 export const recipeList = [
