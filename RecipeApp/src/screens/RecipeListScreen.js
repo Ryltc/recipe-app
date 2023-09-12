@@ -20,7 +20,7 @@ const RecipeListScreen = () => {
             {/* categories filter */}
 
             <View>
-                <Text style={{ fontSize: 22, fontWeight: "bold", }} > Catagories</Text>
+                <Text style={{ fontSize: 22, fontWeight: "300", }} > Catagories</Text>
 
                 {/* categories list */}
                 <CategoriesFilter />
@@ -29,7 +29,7 @@ const RecipeListScreen = () => {
             {/* recipe list filter */}
 
             <View style={{ marginTop: 22, flex: 1}}>
-                <Text style={{ fontSize: 22, fontWeight: "bold" }}>Recipes</Text>
+                <Text style={{ fontSize: 22, fontWeight: "300" }}>Recipes</Text>
                 {/* recipe list */}
 
                 <RecipeCard />
