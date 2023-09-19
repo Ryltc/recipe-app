@@ -1,8 +1,10 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { categories, colors } from "../Constant";
+import { useNavigation } from "@react-navigation/native";
 
 const CategoriesFilter = () => {
+	const navigation = useNavigation();
     return (
         <View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -15,7 +17,7 @@ const CategoriesFilter = () => {
 									index === 0 ? colors.COLOR_PRIMARY : colors.COLOR_LIGHT,
 								marginRight: 40,
 								borderRadius: 8,
-								paddingHorizontal: 30,
+								paddingHorizontal: 10,
 								paddingVertical: 10,
 								shadowColor: "#000",
 								shadowOffset: { width: 0, height: 4 },
@@ -24,15 +26,18 @@ const CategoriesFilter = () => {
 								marginVertical: 16,
 							}}
 						>
-							<Text
-								style={{
-									color: index === 0 && colors.COLOR_LIGHT,
-									fontSize: 18,
-									fontWeight: 400,
-								}}
-							>
-								{category.category}
-							</Text>
+							<Pressable
+								onPress={() => navigation.navigate("RecipeDetail", { item: item })}>
+								<Text
+									style={{
+										color: index === 0 && colors.COLOR_LIGHT,
+										fontSize: 18,
+										fontWeight: 400,
+									}}
+								>
+									{category.category}
+								</Text>
+							</Pressable>
 						</View>
 					);
 				})}

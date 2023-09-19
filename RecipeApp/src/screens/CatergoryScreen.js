@@ -1,21 +1,18 @@
 import { StyleSheet, Text, View, SafeAreaView, ScrollView  } from "react-native";
 import React from "react";
 import Header from "../components/Header";
-import SearchFilter from "../components/SearchFilter";
 import CategoriesFilter from "../components/CategoriesFilter";
 import RecipeCard from "../components/RecipeCard";
+import { useNavigation } from "@react-navigation/native";
 
-const RecipeListScreen = () => {
+const CategoryScreen = () => {
+    const navigation = useNavigation();
     return (
         <SafeAreaView style={{ flex: 1, marginHorizontal: 20, marginTop: 50,  }}>
 
             {/* render header */}
 
             <Header headerText={"Hi, ${username} "} headerIcon={"bell-o"}/>
-
-            {/* search filter */}
-
-            <SearchFilter icon="search" placeholder={"enter your fav recipe"}/>
 
             {/* categories filter */}
 
@@ -39,6 +36,6 @@ const RecipeListScreen = () => {
     );
 };
 
-export default RecipeListScreen;
+export default CategoryScreen;
 
 const styles = StyleSheet.create({});
