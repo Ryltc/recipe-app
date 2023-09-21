@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import SearchFilter from "../components/SearchFilter";
 import CategoriesFilter from "../components/CategoriesFilter";
 import RecipeCard from "../components/RecipeCard";
+import SeasoningCard from "../components/SeasoningCard";
 
 const RecipeListScreen = () => {
     return (
@@ -23,13 +24,23 @@ const RecipeListScreen = () => {
                 <Text style={{ fontSize: 22, fontWeight: "300", }} > Catagories</Text>
 
                 {/* categories list */}
+
                 <CategoriesFilter />
+            </View>
+
+            <View style={{ marginTop: 22, flex: 1}}>
+                <Text style={{ fontSize: 22, fontWeight: "300" }}>Seasoning</Text>
+
+                {/* seasoning list */}
+
+                <SeasoningCard />
             </View>
 
             {/* recipe list filter */}
 
             <View style={{ marginTop: 22, flex: 1}}>
                 <Text style={{ fontSize: 22, fontWeight: "300" }}>Recipes</Text>
+
                 {/* recipe list */}
 
                 <RecipeCard />
