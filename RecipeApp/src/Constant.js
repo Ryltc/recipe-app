@@ -54,7 +54,7 @@ export const spiceList = [
 	{
 		id: "01",
 		name: "Epis",
-		//image: require("../assets/image/spices.jpg"),
+		//image: require("../assets/image/epis.png"),
 		rating: "5.0",
 		ingredients: [
 			"1 Red Bell Pepper",
@@ -76,6 +76,30 @@ export const spiceList = [
 			"Pour into airtight container and store in the refrigerator until needed.",
 		],
 	},
+	{
+		id: "02",
+		name: "Lorem Ipsum",
+		//image: require("../assets/image/epis.png"),
+		rating: "5.0",
+		ingredients: [
+			"1 Red Bell Pepper",
+			"1 Green Bell Pepper",
+			"2 Yellow Onion",
+			"Full Sprig of Cilantro",
+			"Full Sprig of Parsley",
+			"3-4 Heads of Garlic",
+			"1 Scotch Bonnet or Habinero Pepper",
+			"1 Tablespoon of Adobo",
+			"1-2 Tablespoons of Olive Oil",
+			"1/4 cup of water"],
+		time: "10 minutes",
+		difficulty: "Easy",
+		description: "A seasoning staple of Haitian cuisine.",
+		steps: [
+			"Cut everything into managable pieces to fit together in a tall blender.",
+			"Blend until a everything is mixed together.",
+			"Pour into airtight container and store in the refrigerator until needed.",
+	}
 ];
 
 export const recipeList = [
