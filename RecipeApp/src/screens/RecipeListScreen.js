@@ -3,8 +3,8 @@ import React from "react";
 import Header from "../components/Header";
 import SearchFilter from "../components/SearchFilter";
 import CategoriesFilter from "../components/CategoriesFilter";
-import RecipeCard from "../components/RecipeCard";
 import SeasoningCard from "../components/SeasoningCard";
+import RecipeCard from "../components/RecipeCard";
 
 const RecipeListScreen = () => {
     return (
@@ -28,7 +28,7 @@ const RecipeListScreen = () => {
                 <CategoriesFilter />
             </View>
 
-            <View style={{ marginTop: 5, flex: 1}}>
+            <View>
                 <Text style={{ fontSize: 22, fontWeight: "300" }}>Seasoning</Text>
 
                 {/* seasoning list */}
