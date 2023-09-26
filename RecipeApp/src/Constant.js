@@ -54,7 +54,7 @@ export const spiceList = [
 	{
 		id: "01",
 		name: "Epis",
-		//backgroundImage: require("../assets/image/episover.png"),
+		image: require("../assets/images/tuna.png"),
 		rating: "5.0",
 		ingredients: [
 			"1 Red Bell Pepper",
@@ -79,7 +79,7 @@ export const spiceList = [
 	{
 		id: "02",
 		name: "Lorem Ipsum 1",
-		//image: require("../assets/image/epis.png"),
+		//image: require("../assets/images/epis.png"),
 		rating: "5.0",
 		ingredients: [
 			"1 Red Bell Pepper",
@@ -104,7 +104,7 @@ export const spiceList = [
 	{
 		id: "03",
 		name: "Lorem Ipsum 2",
-		//image: require("../assets/image/epis.png"),
+		//image: require("../assets/images/epis.png"),
 		rating: "5.0",
 		ingredients: [
 			"1 Red Bell Pepper",
