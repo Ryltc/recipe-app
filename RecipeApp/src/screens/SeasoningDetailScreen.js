@@ -7,7 +7,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 
 	console.log(item);
 	return (
-		<View style={{ backgroundColor: item.color, flex: 1 }}>
+		<View style={{ backgroundColor: "#121212", flex: 1 }}>
 			<SafeAreaView style={{ flexDirection: "row", marginHorizontal: 16, marginTop: 50 }}>
 				<Pressable style={{ flex: 1 }} onPress={() => navigation.goBack()}>
 					<FontAwesome name={"arrow-circle-left"} size={28} color="white" />
@@ -42,6 +42,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 							width: "100%",
 							height: "100%",
 							resizeMode: "contain",
+							borderRadius: 400/ 2,
 						}}
 					/>
 				</View>

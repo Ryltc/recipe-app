@@ -8,31 +8,33 @@ import { useNavigation } from "@react-navigation/native";
 const CategoryScreen = () => {
     const navigation = useNavigation();
     return (
-        <SafeAreaView style={{ flex: 1, marginHorizontal: 20, marginTop: 50,  }}>
+        <View style={{ backgroundColor: "#121212"}}>
+            <SafeAreaView style={{ flex: 1, marginHorizontal: 20, marginTop: 50,  }}>
 
-            {/* render header */}
+                {/* render header */}
 
-            <Header headerText={"Hi, ${username} "} headerIcon={"bell-o"}/>
+                <Header headerText={"Hi, ${username} "} headerIcon={"bell-o"}/>
 
-            {/* categories filter */}
+                {/* categories filter */}
 
-            <View>
-                <Text style={{ fontSize: 22, fontWeight: "300", }} > Catagories</Text>
+                <View>
+                    <Text style={{ fontSize: 22, fontWeight: "300", }} > Catagories</Text>
 
-                {/* categories list */}
-                <CategoriesFilter />
-            </View>
+                    {/* categories list */}
+                    <CategoriesFilter />
+                </View>
 
-            {/* recipe list filter */}
+                {/* recipe list filter */}
 
-            <View style={{ marginTop: 22, flex: 1}}>
-                <Text style={{ fontSize: 22, fontWeight: "300" }}>Recipes</Text>
-                {/* recipe list */}
+                <View style={{ marginTop: 22, flex: 1}}>
+                    <Text style={{ fontSize: 22, fontWeight: "300" }}>Recipes</Text>
+                    {/* recipe list */}
 
-                <RecipeCard />
+                    <RecipeCard />
 
-            </View>
-        </SafeAreaView>
+                </View>
+            </SafeAreaView>
+        </View>
     );
 };
 
