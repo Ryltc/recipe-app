@@ -1,6 +1,5 @@
 import React from "react";
-import { FlatList, StyleSheet, Text, View, Image, Pressable, ImageBackground } from "react-native";
-import background from "..assets/images/spices.jpg"
+import { FlatList, StyleSheet, Text, View, Pressable, ImageBackground } from "react-native";
 import { spiceList, colors } from "../Constant";
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -31,8 +30,8 @@ const SeasoningCard = () => {
 						<View>
 							<ImageBackground
 							style={{ width: 150, height: 50, resizeMode: "center" }}
-							source={background}>
-							<Text style={{ fontWeight: 400, textAlign: "center" }}>{item.name}</Text>
+							source={'../assets/images/Episjar.png'}>
+							<Text style={{ fontWeight: 400, textAlign: "center", paddingVertical: 10 }}>{item.name}</Text>
 							</ImageBackground>
 						</View>
 					</Pressable>

@@ -110,7 +110,7 @@ const RecipeDetailScreen = ({ navigation, route }) => {
 								}}
 							>
 								<Text style={{ fontSize: 40 }}>🔥</Text>
-								<Text style={{ fontSize: 20, fontWeight: 400 }}>
+								<Text style={{ fontSize: 20, fontWeight: "400" }}>
 									{item.calories}
 								</Text>
 							</View>
@@ -143,7 +143,7 @@ const RecipeDetailScreen = ({ navigation, route }) => {
 												borderRadius: 5,
 											}}
 										></View>
-										<Text style={{ fontSize: 18, marginLeft: 6 }}>
+										<Text style={{ fontSize: 18, fontWeight: 400, marginLeft: 6 }}>
 											{ingredient}
 										</Text>
 									</View>

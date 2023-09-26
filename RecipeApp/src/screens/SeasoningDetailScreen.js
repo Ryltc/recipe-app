@@ -99,21 +99,6 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 									{item.difficulty}
 								</Text>
 							</View>
-							<View
-								style={{
-									backgroundColor: "rgba(255, 165, 0, 0.48)",
-									// paddingHorizontal: 16,
-									paddingVertical: 26,
-									borderRadius: 8,
-									alignItems: "center",
-									width: 100,
-								}}
-							>
-								<Text style={{ fontSize: 40 }}>🔥</Text>
-								<Text style={{ fontSize: 20, fontWeight: 400 }}>
-									{item.calories}
-								</Text>
-							</View>
 						</View>
 
 						{/* Seasoning Ingredients  */}
