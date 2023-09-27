@@ -1,11 +1,19 @@
-import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, ScrollView } from "react-native";
-import React from "react";
+import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, ScrollView, } from "react-native";
+import { CheckBox } from @react-native-community;
+import React, {useState} from "react";
 import { FontAwesome } from "@expo/vector-icons";
 
 const SeasoningDetailScreen = ({ navigation, route }) => {
     const { item } = route.params;
 
 	console.log(item);
+
+	const [isChecked, setChecked] = useState(false);
+	const toggleCheckBox = () => {
+		setChecked(!isChecked);
+	};
+
+
 	return (
 		<View style={{ backgroundColor: "#121212", flex: 1 }}>
 			<SafeAreaView style={{ flexDirection: "row", marginHorizontal: 16, marginTop: 50 }}>
@@ -105,6 +113,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 						{/* Seasoning Ingredients  */}
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
+							<CheckBox value={isChecked} onValueChange={toggleCheckBox} />
 							<Text
 								style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}
 							>
@@ -140,20 +149,22 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 						{/* Seasoning Steps */}
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
-							<Text
-								style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}
-							>
-								Steps:
-							</Text>
+							<View style={{ flexDirection: 'row', marginBottom: 20, }}></View>
+								<CheckBox style={{ alignSelf: 'center' }}value={isChecked} onValueChange={setSelection} />
+								<Text
+									style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}
+								>
+									Steps:
+								</Text>
 
-							{item.steps.map((step, index) => {
-								return (
-									<Text
-										key={index}
-										style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
-									>{`${index + 1} ) ${step}`}</Text>
-								);
-							})}
+								{item.steps.map((step, index) => {
+									return (
+										<Text
+											key={index}
+											style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
+										>{`${index + 1} ) ${step}`}</Text>
+									);
+								})}
 						</View>
 					</ScrollView>
 				</View>

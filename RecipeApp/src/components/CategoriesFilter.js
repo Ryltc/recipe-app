@@ -13,8 +13,7 @@ const CategoriesFilter = () => {
 						<View
 							key={index}
 							style={{
-								backgroundColor:
-									index === 0 ? colors.COLOR_PRIMARY : colors.COLOR_LIGHT,
+								backgroundColor: "#ed6e3a",
 								marginRight: 40,
 								borderRadius: 8,
 								paddingHorizontal: 10,
@@ -26,7 +25,7 @@ const CategoriesFilter = () => {
 								marginVertical: 16,
 							}}
 						>
-							<Pressable
+							<Pressable style={{ backgroundColor: "#ed6e3a" }}
 								onPress={() => navigation.navigate("RecipeDetail", { item: item })}>
 								<Text
 									style={{

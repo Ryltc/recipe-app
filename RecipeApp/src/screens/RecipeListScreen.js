@@ -8,7 +8,7 @@ import RecipeCard from "../components/RecipeCard";
 
 const RecipeListScreen = () => {
     return (
-        <SafeAreaView style={{ backgroundColor: "#121212", flex: 1, marginHorizontal: 20, marginTop: 50,  }}>
+        <SafeAreaView style={{ backgroundColor: "#5e3c2c", flex: 1, paddingHorizontal: 20, marginTop: 50,  }}>
 
             {/* render header */}
 

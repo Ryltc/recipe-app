@@ -15,7 +15,7 @@ const SeasoningCard = () => {
 					<Pressable
 						onPress={() => navigation.navigate("SeasoningDetail", { item: item })}
 						style={{
-							backgroundColor: colors.COLOR_LIGHT,
+							backgroundColor: "#6c9e4f",
 							marginRight: 40,
 							borderRadius: 8,
 							paddingHorizontal: 10,
@@ -27,11 +27,11 @@ const SeasoningCard = () => {
 							marginVertical: 16,
 						}}
 					>
-						<View>
+						<View style={{ }}>
 							<ImageBackground
 							style={{ width: 150, height: 50, resizeMode: "center" }}
-							source={'../assets/images/Episjar.png'}>
-							<Text style={{ fontWeight: 400, textAlign: "center", paddingVertical: 10 }}>{item.name}</Text>
+							source={'../../assets/images/Episjar.png'}>
+							<Text style={{ fontColor: "white", fontWeight: 400, textAlign: "center", paddingVertical: 15 }}>{item.name}</Text>
 							</ImageBackground>
 						</View>
 					</Pressable>
