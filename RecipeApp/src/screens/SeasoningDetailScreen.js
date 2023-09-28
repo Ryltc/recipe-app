@@ -1,5 +1,5 @@
 import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, ScrollView, } from "react-native";
-import { CheckBox } from @react-native-community;
+import Checkbox from 'expo-checkbox';
 import React, {useState} from "react";
 import { FontAwesome } from "@expo/vector-icons";
 
@@ -8,10 +8,24 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 
 	console.log(item);
 
-	const [isChecked, setChecked] = useState(false);
-	const toggleCheckBox = () => {
-		setChecked(!isChecked);
-	};
+	const [checkedIngredients, setCheckedIngredients] = useState([]);
+	const [checkedSteps, setCheckedSteps] = useState([]);
+
+	const handleIngredientChange = (ingredient) => {
+		if (checkedIngredients.includes(ingredient)) {
+		  setCheckedIngredients(checkedIngredients.filter((item) => item !== ingredient));
+		} else {
+		  setCheckedIngredients([...checkedIngredients, ingredient]);
+		}
+	  };
+
+	const handleStepChange = (step) => {
+		if (checkedSteps.includes(step)) {
+		  setCheckedSteps(checkedSteps.filter((item) => item !== step));
+		} else {
+		  setCheckedSteps([...checkedSteps, step]);
+		}
+	  };
 
 
 	return (
@@ -113,13 +127,11 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 						{/* Seasoning Ingredients  */}
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
-							<CheckBox value={isChecked} onValueChange={toggleCheckBox} />
 							<Text
 								style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}
 							>
 								Ingredients:
 							</Text>
-
 							{item.ingredients.map((ingredient, index) => {
 								return (
 									<View
@@ -130,14 +142,20 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 										}}
 										key={index}
 									>
-										<View
+										{/*<View
 											style={{
 												backgroundColor: "red",
 												height: 10,
 												width: 10,
 												borderRadius: 5,
 											}}
-										></View>
+										></View>*/}
+										<Checkbox
+											style={styles.checkbox}
+											color="#00FF00"
+											value={checkedIngredients.includes(ingredient)}
+											onValueChange={() => handleIngredientChange(ingredient)}
+										/>
 										<Text style={{ fontSize: 18, marginLeft: 6 }}>
 											{ingredient}
 										</Text>
@@ -150,19 +168,25 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
 							<View style={{ flexDirection: 'row', marginBottom: 20, }}></View>
-								<CheckBox style={{ alignSelf: 'center' }}value={isChecked} onValueChange={setSelection} />
 								<Text
 									style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}
 								>
 									Steps:
 								</Text>
-
 								{item.steps.map((step, index) => {
 									return (
-										<Text
-											key={index}
-											style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
-										>{`${index + 1} ) ${step}`}</Text>
+										<View>
+											<Checkbox
+												style={styles.checkbox}
+												color="#00FF00"
+												value={checkedSteps.includes(step)}
+												onValueChange={() => handleStepChange(step)}
+											/>
+											<Text
+												style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
+												key={index}
+											>{`${index + 1} ) ${step}`}</Text>
+										</View>
 									);
 								})}
 						</View>
