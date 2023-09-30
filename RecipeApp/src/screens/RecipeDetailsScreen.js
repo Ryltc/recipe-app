@@ -1,11 +1,33 @@
 import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, ScrollView } from "react-native";
-import React from "react";
+import React, {useState} from "react";
+import Checkbox from 'expo-checkbox';
 import { FontAwesome } from "@expo/vector-icons";
 
 const RecipeDetailScreen = ({ navigation, route }) => {
     const { item } = route.params;
 
 	console.log(item);
+
+	const [checkedIngredients, setCheckedIngredients] = useState([]);
+	const [checkedSteps, setCheckedSteps] = useState([]);
+
+	const handleIngredientChange = (ingredient) => {
+		if (checkedIngredients.includes(ingredient)) {
+		  setCheckedIngredients(checkedIngredients.filter((item) => item !== ingredient));
+		} else {
+		  setCheckedIngredients([...checkedIngredients, ingredient]);
+		}
+	  };
+
+	const handleStepChange = (step) => {
+		if (checkedSteps.includes(step)) {
+		  setCheckedSteps(checkedSteps.filter((item) => item !== step));
+		} else {
+		  setCheckedSteps([...checkedSteps, step]);
+		}
+	  };
+
+
 	return (
 		<View style={{ backgroundColor: item.color, flex: 1 }}>
 			<SafeAreaView style={{ flexDirection: "row", marginHorizontal: 16, marginTop: 50 }}>
@@ -135,14 +157,20 @@ const RecipeDetailScreen = ({ navigation, route }) => {
 										}}
 										key={index}
 									>
-										<View
+										{/*<View
 											style={{
 												backgroundColor: "red",
 												height: 10,
 												width: 10,
 												borderRadius: 5,
 											}}
-										></View>
+										></View>*/}
+										<Checkbox
+											style={styles.checkbox}
+											color="#00FF00"
+											value={checkedIngredients.includes(ingredient)}
+											onValueChange={() => handleIngredientChange(ingredient)}
+										/>
 										<Text style={{ fontSize: 18, fontWeight: 400, marginLeft: 6 }}>
 											{ingredient}
 										</Text>
@@ -162,10 +190,18 @@ const RecipeDetailScreen = ({ navigation, route }) => {
 
 							{item.steps.map((step, index) => {
 								return (
-									<Text
-										key={index}
-										style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
-									>{`${index + 1} ) ${step}`}</Text>
+									<View>
+										<Checkbox
+												style={styles.checkbox}
+												color="#00FF00"
+												value={checkedSteps.includes(step)}
+												onValueChange={() => handleStepChange(step)}
+											/>
+											<Text
+												key={index}
+												style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
+											>{`${index + 1} ) ${step}`}</Text>
+										</View>
 								);
 							})}
 						</View>
