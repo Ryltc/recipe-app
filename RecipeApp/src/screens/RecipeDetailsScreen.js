@@ -39,7 +39,7 @@ const RecipeDetailScreen = ({ navigation, route }) => {
 			</SafeAreaView>
 			<View
 				style={{
-					backgroundColor: "#fff",
+					backgroundColor: "#a4330d",
 					flex: 1,
 					marginTop: 140,
 					borderTopLeftRadius: 56,

@@ -39,7 +39,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 			</SafeAreaView>
 			<View
 				style={{
-					backgroundColor: "#fff",
+					backgroundColor: "#6c9e4f",
 					flex: 1,
 					marginTop: 140,
 					borderTopLeftRadius: 56,
