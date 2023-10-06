@@ -6,61 +6,78 @@ import CategoriesFilter from "../components/CategoriesFilter";
 import SeasoningCard from "../components/SeasoningCard";
 import RecipeCard from "../components/RecipeCard";
 
-
-
 const RecipeListScreen = () => {
-    const scrollY = useRef(new Animated.Value(0)).current;
+  const scrollY = useRef(new Animated.Value(0)).current;
 
-    const translateHeader = scrollY.interpolate({
-        inputRange: [0, 80],
-        outputRange: [0, -80],
-        extrapolate: 'clamp',
-      });
+  const translateHeader = scrollY.interpolate({
+    inputRange: [0, 170, 250],
+    outputRange: [0, 0, 100],
+    extrapolate: "clamp",
+  });
 
-    return (
-      <SafeAreaView style={{ backgroundColor: "#5e3c2c", flex: 1, paddingHorizontal: 20, marginTop: 50 }}>
-        <Animated.View style={{ transform: [{ translateY: translateHeader }] }}>
-          {/* render header */}
-          <Header headerText={`Hey Chef, lets cook!`} headerIcon="bell-o" />
-            <View style={{ padding: 20 }}>
-                {/* search filter */}
-                <SearchFilter icon="search" placeholder="enter your fav recipe" />
-                {/* categories filter */}
-                <View>
-                <Text style={{ fontSize: 22, fontWeight: "300" }}>Categories</Text>
+  // Define a threshold where you want the categories and seasoning cards to disappear.
+  const scrollThreshold = 100;
 
-                {/* categories list */}
-                <CategoriesFilter />
-                </View>
-                <View>
-                <Text style={{ fontSize: 22, fontWeight: "300" }}>Seasoning</Text>
-
-                {/* seasoning list */}
-                <SeasoningCard />
-                </View>
+  return (
+    <SafeAreaView style={{ backgroundColor: "#5e3c2c", flex: 1, paddingHorizontal: 20, marginTop: 50 }}>
+      <Animated.View style={{ transform: [{ translateY: translateHeader }] }}>
+        {/* render header */}
+        <Header headerText={`Hey Chef, lets cook!`} headerIcon="bell-o" />
+        <View style={{ padding: 20 }}>
+          {/* search filter */}
+          <SearchFilter icon="search" placeholder="enter your fav recipe" />
+          {/* categories filter */}
+          {scrollY._value < scrollThreshold && (
+            <View>
+              <Text style={{ fontSize: 22, fontWeight: "300" }}>Categories</Text>
+              {/* categories list */}
+              <CategoriesFilter />
             </View>
-        </Animated.View>
-
-        <Animated.ScrollView
-            contentContainerStyle={styles.content}
-            onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], {
-            useNativeDriver: true,
-            })}
-            scrollEventThrottle={1}
-        >
-
-            {/* recipe list filter */}
-            <View style={{ marginTop: 5, flex: 1 }}>
-              <Text style={{ fontSize: 22, fontWeight: "300" }}>Recipes</Text>
-
-              {/* recipe list */}
-              <RecipeCard />
+          )}
+          {scrollY._value < scrollThreshold && (
+            <View>
+              <Text style={{ fontSize: 22, fontWeight: "300" }}>Seasoning</Text>
+              {/* seasoning list */}
+              <SeasoningCard />
             </View>
-        </Animated.ScrollView>
-        </SafeAreaView>
-        );
-      };
+          )}
+        </View>
+      </Animated.View>
 
-      export default RecipeListScreen;
+      <Animated.ScrollView style={{
+        transform: [
+          {
+            translateY: scrollY.interpolate({
+              inputRange: [0, 170, 250],
+              outputRange: [0, 0, 100],
+              extrapolate: "clamp",
+          })
+        }
+      ]
+    }}
+        //contentContainerStyle={styles.content}
+        //onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], {
+        //  useNativeDriver: true,
+        //})}
+        //scrollEventThrottle={1}
+      >
+      {/* recipe list filter */}
+      <View style={{ marginTop: 5, flex: 1 }}>
+        <Text style={{ fontSize: 22, fontWeight: "300" }}>Recipes</Text>
+        {/* Container for the recipe card area */}
+        <View style={{ flex: 1 }}>
+          {/* recipe list */}
+          <RecipeCard />
+        </View>
+      </View>
+    </Animated.ScrollView>
 
-      const styles = StyleSheet.create({});
+    </SafeAreaView>
+  );
+};
+
+export default RecipeListScreen;
+
+const styles = StyleSheet.create({});
+
+
