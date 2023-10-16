@@ -1,32 +1,33 @@
-import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, ScrollView } from "react-native";
+import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, ScrollView, TouchableOpacity } from "react-native";
 import React, {useState} from "react";
 import Checkbox from 'expo-checkbox';
 import { FontAwesome } from "@expo/vector-icons";
 
-const RecipeDetailScreen = ({ navigation, route }) => {
-    const { item } = route.params;
-
-	console.log(item);
-
+const RecipeDetailScreen = ({ route, navigation }) => {
+	const { item } = route.params;
 	const [checkedIngredients, setCheckedIngredients] = useState([]);
 	const [checkedSteps, setCheckedSteps] = useState([]);
 
 	const handleIngredientChange = (ingredient) => {
-		if (checkedIngredients.includes(ingredient)) {
-		  setCheckedIngredients(checkedIngredients.filter((item) => item !== ingredient));
-		} else {
-		  setCheckedIngredients([...checkedIngredients, ingredient]);
-		}
-	  };
+	  if (checkedIngredients.includes(ingredient)) {
+		setCheckedIngredients(checkedIngredients.filter((item) => item !== ingredient));
+	  } else {
+		setCheckedIngredients([...checkedIngredients, ingredient]);
+	  }
+	};
 
 	const handleStepChange = (step) => {
-		if (checkedSteps.includes(step)) {
-		  setCheckedSteps(checkedSteps.filter((item) => item !== step));
-		} else {
-		  setCheckedSteps([...checkedSteps, step]);
-		}
-	  };
+	  if (checkedSteps.includes(step)) {
+		setCheckedSteps(checkedSteps.filter((item) => item !== step));
+	  } else {
+		setCheckedSteps([...checkedSteps, step]);
+	  }
+	}
 
+	{item.ingredients.map((ingredient, index) => {
+		const imageExtension = ingredient === item.ingredients[0] ? 'png' : 'jpg';
+		const imagePath = `../assets/images/ingredients/${item.folder}/${ingredient}.${imageExtension}`;
+		const isSelected = checkedIngredients.includes(ingredient);
 
 	return (
 		<View style={{ backgroundColor: item.color, flex: 1 }}>
@@ -141,43 +142,33 @@ const RecipeDetailScreen = ({ navigation, route }) => {
 						{/* Recipe Ingredients  */}
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
-							<Text
-								style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}
-							>
-								Ingredients:
-							</Text>
-
+							<Text style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}>Ingredients:</Text>
 							{item.ingredients.map((ingredient, index) => {
-								return (
-									<View
-										style={{
-											flexDirection: "row",
-											alignItems: "center",
-											marginVertical: 4,
-										}}
-										key={index}
-									>
-										{/*<View
-											style={{
-												backgroundColor: "red",
-												height: 10,
-												width: 10,
-												borderRadius: 5,
-											}}
-										></View>*/}
-										<Checkbox
-											style={styles.checkbox}
-											color="#00FF00"
-											value={checkedIngredients.includes(ingredient)}
-											onValueChange={() => handleIngredientChange(ingredient)}
-										/>
-										<Text style={{ fontSize: 18, fontWeight: 400, marginLeft: 6 }}>
-											{ingredient}
-										</Text>
-									</View>
-								);
+							const isSelected = checkedIngredients.includes(ingredient);
+							return (
+								<TouchableOpacity
+								key={index}
+								style={{ flexDirection: "row", alignItems: "center", marginVertical: 4 }}
+								onPress={() => handleIngredientChange(ingredient)}
+								>
+								<View style={{ flexDirection: "row", alignItems: "center"}}>
+									{isSelected && (
+									<Image
+										source={require(`../assets/images/check-mark.png`)}
+										style={{ height: 20, width: 20, marginRight: 10 }}
+									/>
+									)}
+									<Image
+									source={require(imagePath)}
+									style={{ height: 40, width: 40 }}
+									/>
+								</View>
+								<Text style={{ fontSize: 18, fontWeight: 400, marginLeft: 6 }}>{ingredient}</Text>
+								</TouchableOpacity>
+							);
 							})}
 						</View>
+
 
 						{/* Recipe Steps */}
 
@@ -210,6 +201,7 @@ const RecipeDetailScreen = ({ navigation, route }) => {
 			</View>
 		</View>
 	);
+})};
 };
 
 export default RecipeDetailScreen;

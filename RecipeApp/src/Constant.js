@@ -133,9 +133,10 @@ export const recipeList = [
 	{
 		id: "01",
 		name: "Tuna Tartare",
+		folder: "tuna-tartare",
 		image: require("../assets/images/tuna.png"),
 		rating: "4.2",
-		ingredients: ["Fresh Tuna", "Lime Juice", "Red Onion", "Avocado"],
+		ingredients: ["1-Fresh-Tuna", "2-Lime-Juice", "3-Red-Onion", "4-Avocado"],
 		time: "40 mins",
 		difficulty: "Medium",
 		calories: "420 cal",
