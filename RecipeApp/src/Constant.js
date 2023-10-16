@@ -129,6 +129,23 @@ export const spiceList = [
 	},
 ];
 
+export const ingredientImages = {
+	"1-Fresh-Tuna-Steak": require("../assets/images/ingredients/tuna-tartare/1-Fresh-Tuna-Steak.png"),
+    "2-Lime-Juice": require("../assets/images/ingredients/tuna-tartare/2-Lime-Juice.jpg"),
+    "3-Red-Onion": require("../assets/images/ingredients/tuna-tartare/3-Red-Onion.jpg"),
+    "4-Avocado": require("../assets/images/ingredients/tuna-tartare/4-Avocado.jpg"),
+  };
+
+export const recipeIngredients = {
+	"tuna-tartare": {
+	  "1-Fresh-Tuna-Steak": require("../assets/images/ingredients/tuna-tartare/1-Fresh-Tuna-Steak.png"),
+	  "2-Lime-Juice": require("../assets/images/ingredients/tuna-tartare/2-Lime-Juice.jpg"),
+	  "3-Red-Onion": require("../assets/images/ingredients/tuna-tartare/3-Red-Onion.jpg"),
+	  "4-Avocado": require("../assets/images/ingredients/tuna-tartare/4-Avocado.jpg"),
+	},
+  };
+
+
 export const recipeList = [
 	{
 		id: "01",

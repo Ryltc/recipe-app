@@ -2,6 +2,9 @@ import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, Scr
 import React, {useState} from "react";
 import Checkbox from 'expo-checkbox';
 import { FontAwesome } from "@expo/vector-icons";
+import ingredientImages from "../Constant";
+import { recipeList } from "../Constant";
+import { recipeIngredients } from "../Constant";
 
 const RecipeDetailScreen = ({ route, navigation }) => {
 	const { item } = route.params;
@@ -24,9 +27,18 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 	  }
 	}
 
+	const ingredientImages = recipeIngredients[item.folder];
+
+	//const getIngredientImages = (recipeName) => {
+	//	// Import the ingredient images based on the recipe name
+	//	return require(`../assets/images/ingredients/${recipeName}`);
+	//  };
+
+	  //const ingredientImages = getIngredientImages(item.folder);
+
 	{item.ingredients.map((ingredient, index) => {
 		const imageExtension = ingredient === item.ingredients[0] ? 'png' : 'jpg';
-		const imagePath = `../assets/images/ingredients/${item.folder}/${ingredient}.${imageExtension}`;
+		//const imagePath = `../assets/images/ingredients/${item.folder}/${ingredient}.${imageExtension}`;
 		const isSelected = checkedIngredients.includes(ingredient);
 
 	return (
@@ -151,17 +163,18 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 								style={{ flexDirection: "row", alignItems: "center", marginVertical: 4 }}
 								onPress={() => handleIngredientChange(ingredient)}
 								>
-								<View style={{ flexDirection: "row", alignItems: "center"}}>
+								<View style={{ flexDirection: "row", alignItems: "center" }}>
 									{isSelected && (
+									//<Image
+									//	source={require(`../assets/images/check-mark.png`)}
+									//	style={{ height: 20, width: 20, marginRight: 10 }}
+									///>
+									//)}
 									<Image
-										source={require(`../assets/images/check-mark.png`)}
-										style={{ height: 20, width: 20, marginRight: 10 }}
-									/>
-									)}
-									<Image
-									source={require(imagePath)}
+									source={ingredientImages[ingredient]}
 									style={{ height: 40, width: 40 }}
 									/>
+									)}
 								</View>
 								<Text style={{ fontSize: 18, fontWeight: 400, marginLeft: 6 }}>{ingredient}</Text>
 								</TouchableOpacity>
