@@ -2,8 +2,8 @@ import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, Scr
 import React, {useState} from "react";
 import Checkbox from 'expo-checkbox';
 import { FontAwesome } from "@expo/vector-icons";
-import ingredientImages from "../Constant";
-import { recipeList } from "../Constant";
+//import ingredientImages from "../Constant";
+//import { recipeList } from "../Constant";
 import { recipeIngredients } from "../Constant";
 
 const RecipeDetailScreen = ({ route, navigation }) => {
@@ -34,7 +34,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 	//	return require(`../assets/images/ingredients/${recipeName}`);
 	//  };
 
-	  //const ingredientImages = getIngredientImages(item.folder);
+	//const ingredientImages = getIngredientImages(item.folder);
 
 	{item.ingredients.map((ingredient, index) => {
 		const imageExtension = ingredient === item.ingredients[0] ? 'png' : 'jpg';

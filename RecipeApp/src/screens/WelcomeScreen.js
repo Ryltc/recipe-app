@@ -15,7 +15,7 @@ const WelcomeScreen = ( { navigation }) => {
                 />
 
                 <Text style={{ marginTop: 50, color: "#f96163", fontSize: 22, fontWeight: "bold" }}>
-                    La Cocina Alta
+                    La Cocina de Héctor
                 </Text>
 
                 <Text style={{
@@ -26,7 +26,7 @@ const WelcomeScreen = ( { navigation }) => {
                     marginBottom: 40,
                     }}
                 >
-                    Cook Like Hector
+                    Cook Like Héctor
                 </Text>
 
                 <TouchableOpacity
