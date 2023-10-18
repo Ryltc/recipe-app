@@ -8,6 +8,7 @@ import { recipeIngredients } from "../Constant";
 
 const RecipeDetailScreen = ({ route, navigation }) => {
 	const { item } = route.params;
+	console.log("Item:", item);
 	const [checkedIngredients, setCheckedIngredients] = useState([]);
 	const [checkedSteps, setCheckedSteps] = useState([]);
 
@@ -28,6 +29,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 	}
 
 	const ingredientImages = recipeIngredients[item.folder];
+	console.log("Ingredient Images:", ingredientImages);
 
 	//const getIngredientImages = (recipeName) => {
 	//	// Import the ingredient images based on the recipe name

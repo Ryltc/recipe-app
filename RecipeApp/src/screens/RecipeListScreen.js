@@ -22,7 +22,7 @@ const RecipeListScreen = () => {
     <SafeAreaView style={{ backgroundColor: "#5e3c2c", flex: 1, paddingHorizontal: 20, marginTop: 50 }}>
       <Animated.View style={{ transform: [{ translateY: translateHeader }] }}>
         {/* render header */}
-        <Header headerText={`Hey Chef, lets cook!`} headerIcon="bell-o" />
+        <Header headerText={`Hey Chef, what's on the menu?`} headerIcon="bell-o" />
         <View style={{ padding: 20 }}>
           {/* search filter */}
           <SearchFilter icon="search" placeholder="enter your fav recipe" />
