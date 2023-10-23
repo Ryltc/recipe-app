@@ -173,6 +173,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 									///>
 									//)}
 									<Image
+									key={index}
 									source={ingredientImages[ingredient]}
 									style={{ height: 40, width: 40 }}
 									/>

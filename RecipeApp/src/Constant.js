@@ -129,6 +129,35 @@ export const spiceList = [
 	},
 ];
 
+export const sauceAndDip = [
+	{
+		id: "01",
+		name: "Pini Cheese",
+		//image: require("../assets/images/pinicheese.png"),
+		rating: "5.0",
+		ingredients: [
+			"8oz Cream Cheese",
+			"8oz Blue Cheese",
+			"4oz Softened Unsalted Butter",
+			"1 Tsp of Dijon Mustard",
+			"Dash of Worcestor Sauce",
+			"Dash of Tobasco Sauce",
+			"1/3 Greenn Olives (w/peppers okay)",
+			"1 TSP of chopped Chives or Parsley",
+			"1-2 Tablespoons of Olive Oil",
+			"1/4 cup of water"],
+		time: "10 minutes",
+		difficulty: "Easy",
+		description: "Cheese dip that goes great with celery or crackers. *Chef Recommendation: Maztos Crackers*",
+		steps: [
+			"Make sure ingredients are at room temperature so mixing is easier",
+			"If using stand mixer, start adding cheese and butter in slowly",
+			"Add the rest of the ingredients and mix",
+			"Can be eaten immediately, but letting sit for a couple days lets the flavors set in better"
+		],
+	},
+];
+
 export const ingredientImages = {
 	"tuna-tartare": {
 	  "1-Fresh-Tuna-Steak": require("../assets/images/ingredients/tuna-tartare/1-Fresh-Tuna-Steak.png"),
@@ -317,6 +346,27 @@ export const recipeList = [
 			"Boil eggs to your desired doneness, then peel and slice them.",
 			"Assemble the ramen bowls by placing cooked noodles, vegetables, and egg slices.",
 			"Ladle the hot broth over the ingredients and get ready to enjoy your homemade ramen!",
+		],
+	},
+	{
+		id: "09",
+		name: "Holiday Ham",
+		folder: "holiday-ham",
+		//image: require("../assets/images/ham.png"),
+		rating: "5.0",
+		ingredients: ["1-Ham-Butt/Shank", "2-Pineapple-Slices", "3-Cloves", "4-Honey", "5-Kero Syrup", "6-Brown-Sugar", "7-DrPepper"],
+		time: "6-12 Hours",
+		difficulty: "Medium",
+		calories: "420 cal",
+		color: "#006A4E",
+		description:
+			"A wonderful holiday ham that will not taste like a dream, but will bless your home with aromatic flavor",
+		steps: [
+			"Cut off and set aside fat",
+			"Place cloves about 3-4 inches from eachother",
+			"Use toothpicks to place and hold pineapple slices",
+			"Drizzle kero syrup, brown sugar, honey, and lastly the Dr. Pepper.",
+			"Place in oven at 200˚Farenheit for 6 to 12 hours",
 		],
 	},
 ];
