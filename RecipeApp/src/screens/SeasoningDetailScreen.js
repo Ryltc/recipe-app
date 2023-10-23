@@ -1,5 +1,6 @@
 import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, ScrollView, } from "react-native";
 //import Checkbox from 'expo-checkbox';
+//import "rsuite/dist/rsuite.min.css";
 import { Checkbox, CheckboxGroup } from "rsuite"; 
 import React, {useState} from "react";
 import { FontAwesome } from "@expo/vector-icons";
@@ -151,7 +152,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 												borderRadius: 5,
 											}}
 										></View>*/}
-										<CheckboxGroup>
+										<CheckboxGroup inline>
 											<Checkbox
 												style={styles.checkbox}
 												color="#00FF00"
