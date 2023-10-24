@@ -133,7 +133,7 @@ export const sauceList = [
 	{
 		id: "01",
 		name: "Pini Cheese",
-		//image: require("../assets/images/pinicheese.png"),
+		image: require("../assets/images/pini-cheese.jpg"),
 		rating: "5.0",
 		ingredients: [
 			"8oz Cream Cheese",
