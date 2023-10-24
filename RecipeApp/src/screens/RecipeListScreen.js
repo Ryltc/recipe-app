@@ -5,6 +5,7 @@ import SearchFilter from "../components/SearchFilter";
 import CategoriesFilter from "../components/CategoriesFilter";
 import SeasoningCard from "../components/SeasoningCard";
 import RecipeCard from "../components/RecipeCard";
+import SauceCard from "../components/SauceCard";
 
 const RecipeListScreen = () => {
   const scrollY = useRef(new Animated.Value(0)).current;
@@ -23,25 +24,32 @@ const RecipeListScreen = () => {
       <Animated.View style={{ transform: [{ translateY: translateHeader }] }}>
         {/* render header */}
         <Header headerText={`Hey Chef, what's on the menu?`} headerIcon="bell-o" />
-        <View style={{ padding: 20 }}>
-          {/* search filter */}
-          <SearchFilter icon="search" placeholder="enter your fav recipe" />
-          {/* categories filter */}
-          {scrollY._value < scrollThreshold && (
-            <View>
-              <Text style={{ fontSize: 22, fontWeight: "300" }}>Categories</Text>
-              {/* categories list */}
-              <CategoriesFilter />
-            </View>
-          )}
-          {scrollY._value < scrollThreshold && (
-            <View>
-              <Text style={{ fontSize: 22, fontWeight: "300" }}>Seasoning</Text>
-              {/* seasoning list */}
-              <SeasoningCard />
-            </View>
-          )}
-        </View>
+          <View style={{ padding: 20 }}>
+            {/* search filter */}
+            <SearchFilter icon="search" placeholder="enter your fav recipe" />
+            {/* categories filter */}
+            {scrollY._value < scrollThreshold && (
+              <View>
+                <Text style={{ fontSize: 22, fontWeight: "300" }}>Categories</Text>
+                {/* categories list */}
+                <CategoriesFilter />
+              </View>
+            )}
+            {scrollY._value < scrollThreshold && (
+              <View>
+                <Text style={{ fontSize: 22, fontWeight: "300" }}>Seasoning</Text>
+                {/* seasoning list */}
+                <SeasoningCard />
+              </View>
+            )}
+            {scrollY._value < scrollThreshold && (
+              <View>
+                <Text style={{ fontSize: 22, fontWeight: "300" }}>Sauces and Dips</Text>
+                {/* sauce and dip list */}
+                <SauceCard />
+              </View>
+            )}
+          </View>
       </Animated.View>
 
       <Animated.ScrollView style={{

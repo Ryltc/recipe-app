@@ -129,7 +129,7 @@ export const spiceList = [
 	},
 ];
 
-export const sauceAndDip = [
+export const sauceList = [
 	{
 		id: "01",
 		name: "Pini Cheese",

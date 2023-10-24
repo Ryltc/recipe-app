@@ -4,8 +4,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import WelcomeScreen from "../screens/WelcomeScreen";
 import RecipeListScreen from "../screens/RecipeListScreen";
-import RecipeDetailsScreen from "../screens/RecipeDetailsScreen";
+import RecipeDetailScreen from "../screens/RecipeDetailScreen";
 import SeasoningDetailScreen from "../screens/SeasoningDetailScreen";
+import SauceDetailScreen from "../screens/SauceDetailScreen";
 
 const Stack = createNativeStackNavigator();
 const AppNavigator = () => {
@@ -14,8 +15,9 @@ const AppNavigator = () => {
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
 				<Stack.Screen name="Welcome" component={WelcomeScreen} />
 				<Stack.Screen name="RecipeList" component={RecipeListScreen} />
-				<Stack.Screen name="RecipeDetail" component={RecipeDetailsScreen} />
+				<Stack.Screen name="RecipeDetail" component={RecipeDetailScreen} />
 				<Stack.Screen name="SeasoningDetail" component={SeasoningDetailScreen} />
+				<Stack.Screen name="SauceDetail" component={SauceDetailScreen} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
