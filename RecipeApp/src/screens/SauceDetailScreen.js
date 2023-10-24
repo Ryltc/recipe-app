@@ -1,9 +1,10 @@
 import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, ScrollView, } from "react-native";
 import Checkbox from 'expo-checkbox';
 //import "rsuite/dist/rsuite.min.css";
-//import { Checkbox, CheckboxGroup } from "rsuite"; 
+//import { Checkbox, CheckboxGroup } from "rsuite";
 import React, {useState} from "react";
 import { FontAwesome } from "@expo/vector-icons";
+
 
 const SauceDetailScreen = ({ navigation, route }) => {
     const { item } = route.params;

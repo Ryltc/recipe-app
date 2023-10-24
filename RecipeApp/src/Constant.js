@@ -156,6 +156,50 @@ export const sauceList = [
 			"Can be eaten immediately, but letting sit for a couple days lets the flavors set in better"
 		],
 	},
+	{
+		id: "02",
+		name: "Mock Chicken Sauce",
+		//image: require("../assets/images/pinicheese.png"),
+		rating: "5.0",
+		ingredients: [
+			"1/4 cup of honey",
+			"2 tablespoons of yellow mustard",
+			"1/4 cup of barbecue sauce",
+			"1 tablespoon of lemon juice",
+			"1/2 cup of mayonnause or aoili"],
+		time: "5 minutes",
+		difficulty: "Easy",
+		description: "Easy mock chicken sauce *homophobia free!*",
+		steps: [
+			"Mix all ingredients and let sit in refrigerator for atleast an hour",
+		],
+	},
+	{
+		id: "03",
+		name: "Mock Hottie Sauce",
+		//image: require("../assets/images/pinicheese.png"),
+		rating: "5.0",
+		ingredients: [
+			"1/2 cuo of water",
+			"1 teaspoon of cornstarch",
+			"2/3 cup of granulated sugar",
+			"1/3 cup of Frank's RedHot Cayanne Pepper sauce",
+			"1/3 cup of light corn syrup",
+			"1/4 cup of honey",
+			"1 and a 1/4 teaspoons of ground Aleppo pepper",
+			"1 tablespoon plus one teaspoon of apple cider vinegar"],
+		time: "5 minutes",
+		difficulty: "Easy",
+		description: "Mock Hottie sauce, you know the one",
+		steps: [
+			"Mix cornstarch and water in a small saucepan",
+			"Add everything but apple cider vinegar",
+			"Bring to boil on medium",
+			"Reduce and simmer for 5 minutes to let thicken",
+			"Remove from head and add vinegar",
+			"Cover and cool"
+		],
+	},
 ];
 
 export const ingredientImages = {

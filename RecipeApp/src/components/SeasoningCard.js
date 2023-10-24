@@ -28,11 +28,12 @@ const SeasoningCard = () => {
 						}}
 					>
 						<View style={{ }}>
-							<ImageBackground
-							style={{ width: 150, height: 50, resizeMode: "center" }}
-							source={'../../assets/images/Episjar.png'}>
-							<Text style={{ fontColor: "white", fontWeight: 400, textAlign: "center", paddingVertical: 15 }}>{item.name}</Text>
-							</ImageBackground>
+							<Text
+								style={{
+									fontSize: 18,
+									fontWeight: 400,
+								}}
+							>{item.name}</Text>
 						</View>
 					</Pressable>
 				)}

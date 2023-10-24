@@ -38,10 +38,12 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 
 	//const ingredientImages = getIngredientImages(item.folder);
 
-	{item.ingredients.map((ingredient, index) => {
-		const imageExtension = ingredient === item.ingredients[0] ? 'png' : 'jpg';
+	//{item.ingredients.map((ingredient, index) => {
+	//	const imageExtension = ingredient === item.ingredients[0] ? 'png' : 'jpg';
 		//const imagePath = `../assets/images/ingredients/${item.folder}/${ingredient}.${imageExtension}`;
-		const isSelected = checkedIngredients.includes(ingredient);
+	//	const isSelected = checkedIngredients.includes(ingredient);
+	//}
+//}
 
 	return (
 		<View style={{ backgroundColor: item.color, flex: 1 }}>
@@ -156,6 +158,43 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 						{/* Recipe Ingredients  */}
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
+							<Text
+								style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}
+							>
+								Ingredients:
+							</Text>
+							{item.ingredients.map((ingredient, index) => {
+								return (
+									<View
+										style={{
+											flexDirection: "row",
+											alignItems: "center",
+											marginVertical: 4,
+										}}
+										key={index}
+									>
+										{/*<View
+											style={{
+												backgroundColor: "red",
+												height: 10,
+												width: 10,
+												borderRadius: 5,
+											}}
+										></View>*/}
+											<Checkbox
+												style={styles.checkbox}
+												color="#00FF00"
+												value={checkedIngredients.includes(ingredient)}
+												onValueChange={() => handleIngredientChange(ingredient)}
+											/>
+											<Text style={{ fontSize: 18, marginLeft: 6 }}>
+												{ingredient}
+											</Text>
+									</View>
+								);
+							})}
+						</View>
+						{/*<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
 							<Text style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}>Ingredients:</Text>
 							{item.ingredients.map((ingredient, index) => {
 							const isSelected = checkedIngredients.includes(ingredient);
@@ -183,7 +222,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 								</TouchableOpacity>
 							);
 							})}
-						</View>
+						</View>*/}
 
 
 						{/* Recipe Steps */}
@@ -217,7 +256,6 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 			</View>
 		</View>
 	);
-})};
 };
 
 export default RecipeDetailScreen;
