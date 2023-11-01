@@ -25,16 +25,8 @@ const RecipeListScreen = () => {
         {/* render header */}
         <Header headerText={`Hey Chef, what's on the menu?`} headerIcon="bell-o" />
           <View style={{ padding: 20 }}>
-            {/* search filter */}
-            <SearchFilter icon="search" placeholder="enter your fav recipe" />
-            {/* categories filter */}
-            {scrollY._value < scrollThreshold && (
-              <View>
-                <Text style={{ fontSize: 22, fontWeight: "300" }}>Categories</Text>
-                {/* categories list */}
-                <CategoriesFilter />
-              </View>
-            )}
+            <View>
+            </View>
             {scrollY._value < scrollThreshold && (
               <View>
                 <Text style={{ fontSize: 22, fontWeight: "300" }}>Seasoning</Text>
@@ -89,3 +81,20 @@ export default RecipeListScreen;
 const styles = StyleSheet.create({});
 
 
+
+
+
+
+
+
+
+//            {/* search filter */}
+//            {/*<SearchFilter icon="search" placeholder="enter your fav recipe" />*/}
+//            {/* categories filter */}
+//            {scrollY._value < scrollThreshold && (
+//              <View>
+//               <Text style={{ fontSize: 22, fontWeight: "300" }}>Categories</Text>
+//                {/* categories list */}
+//                <CategoriesFilter />
+//              </View>
+//            )}

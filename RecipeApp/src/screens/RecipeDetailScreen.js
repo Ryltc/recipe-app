@@ -194,42 +194,12 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 								);
 							})}
 						</View>
-						{/*<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
-							<Text style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}>Ingredients:</Text>
-							{item.ingredients.map((ingredient, index) => {
-							const isSelected = checkedIngredients.includes(ingredient);
-							return (
-								<TouchableOpacity
-								key={index}
-								style={{ flexDirection: "row", alignItems: "center", marginVertical: 4 }}
-								onPress={() => handleIngredientChange(ingredient)}
-								>
-								<View style={{ flexDirection: "row", alignItems: "center" }}>
-									{isSelected && (
-									//<Image
-									//	source={require(`../assets/images/check-mark.png`)}
-									//	style={{ height: 20, width: 20, marginRight: 10 }}
-									///>
-									//)}
-									<Image
-									key={index}
-									source={ingredientImages[ingredient]}
-									style={{ height: 40, width: 40 }}
-									/>
-									)}
-								</View>
-								<Text style={{ fontSize: 18, fontWeight: 400, marginLeft: 6 }}>{ingredient}</Text>
-								</TouchableOpacity>
-							);
-							})}
-						</View>*/}
-
 
 						{/* Recipe Steps */}
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
 							<Text
-								style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}
+								style={{ fontSize: 22, fontWeight: "600" }}
 							>
 								Steps:
 							</Text>
@@ -243,11 +213,10 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 												value={checkedSteps.includes(step)}
 												onValueChange={() => handleStepChange(step)}
 											/>
-											<Text
-												key={index}
-												style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
-											>{`${index + 1} ) ${step}`}</Text>
-										</View>
+											<Text style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}>
+												{step}
+											</Text>
+									</View>
 								);
 							})}
 						</View>

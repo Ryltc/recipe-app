@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
 import { FontAwesome } from "@expo/vector-icons";
+import SearchInput, { createFilter } from 'react-native-search-filter';
 
 const SearchFilter = ({ icon, placeholder }) => {
 	return (
