@@ -178,7 +178,14 @@ const SauceDetailScreen = ({ navigation, route }) => {
 								</Text>
 								{item.steps.map((step, index) => {
 									return (
-										<View>
+										<View
+										style={{
+											flexDirection: "row",
+											alignItems: "center",
+											marginVertical: 4,
+										}}
+										key={index}
+									>
 											<Checkbox
 												style={styles.checkbox}
 												color="#00FF00"

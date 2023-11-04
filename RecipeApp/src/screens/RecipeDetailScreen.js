@@ -187,7 +187,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 												value={checkedIngredients.includes(ingredient)}
 												onValueChange={() => handleIngredientChange(ingredient)}
 											/>
-											<Text style={{ fontSize: 18, marginLeft: 6 }}>
+											<Text style={{ fontSize: 18, marginLeft: 6, fontWeight: 700 }}>
 												{ingredient}
 											</Text>
 									</View>
@@ -203,19 +203,25 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 							>
 								Steps:
 							</Text>
-
 							{item.steps.map((step, index) => {
 								return (
-									<View>
+									<View
+									style={{
+										flexDirection: "row",
+										alignItems: "center",
+										marginVertical: 4,
+									}}
+									key={index}
+								>
 										<Checkbox
-												style={styles.checkbox}
-												color="#00FF00"
-												value={checkedSteps.includes(step)}
-												onValueChange={() => handleStepChange(step)}
-											/>
-											<Text style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}>
-												{step}
-											</Text>
+											style={styles.checkbox}
+											color="#00FF00"
+											value={checkedSteps.includes(step)}
+											onValueChange={() => handleStepChange(step)}
+										/>
+										<Text style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}>
+											{step}
+										</Text>
 									</View>
 								);
 							})}
