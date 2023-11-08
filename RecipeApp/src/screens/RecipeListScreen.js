@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, Animated  } from "react-native";
 import React, { useRef } from "react";
 import Header from "../components/Header";
-import SearchFilter from "../components/SearchFilter";
-import CategoriesFilter from "../components/CategoriesFilter";
+//import SearchFilter from "../components/SearchFilter";
+//import CategoriesFilter from "../components/CategoriesFilter";
 import SeasoningCard from "../components/SeasoningCard";
 import RecipeCard from "../components/RecipeCard";
 import SauceCard from "../components/SauceCard";
@@ -24,7 +24,7 @@ const RecipeListScreen = () => {
       <Animated.View style={{ transform: [{ translateY: translateHeader }] }}>
         {/* render header */}
         <Header headerText={`Hey Chef, what's on the menu?`} headerIcon="bell-o" />
-          <View style={{ padding: 20 }}>
+          <View style={{ padding: 20, color: "#3c444c" }}>
             <View>
             </View>
             {scrollY._value < scrollThreshold && (
