@@ -195,7 +195,8 @@ const SauceDetailScreen = ({ navigation, route }) => {
 											<Text
 												style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
 												key={index}
-											>{`${index + 1} ) ${step}`}</Text>
+											>{`${index + 1} ) ${step}`}
+											</Text>
 										</View>
 									);
 								})}

@@ -81,6 +81,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 							width: "100%",
 							height: "100%",
 							resizeMode: "contain",
+							borderRadius: 400/ 2,
 						}}
 					/>
 				</View>
@@ -214,14 +215,16 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 									key={index}
 								>
 										<Checkbox
-											style={styles.checkbox}
-											color="#00FF00"
-											value={checkedSteps.includes(step)}
-											onValueChange={() => handleStepChange(step)}
-										/>
-										<Text style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}>
-											{step}
-										</Text>
+												style={styles.checkbox}
+												color="#00FF00"
+												value={checkedSteps.includes(step)}
+												onValueChange={() => handleStepChange(step)}
+											/>
+											<Text
+												style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
+												key={index}
+											>{`${index + 1} ) ${step}`}
+											</Text>
 									</View>
 								);
 							})}

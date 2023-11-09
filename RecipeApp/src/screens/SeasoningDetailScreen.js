@@ -177,8 +177,15 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 								</Text>
 								{item.steps.map((step, index) => {
 									return (
-										<View>
-											<Checkbox
+										<View
+									style={{
+										flexDirection: "row",
+										alignItems: "center",
+										marginVertical: 4,
+									}}
+									key={index}
+								>
+										<Checkbox
 												style={styles.checkbox}
 												color="#00FF00"
 												value={checkedSteps.includes(step)}
@@ -187,8 +194,9 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 											<Text
 												style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
 												key={index}
-											>{`${index + 1} ) ${step}`}</Text>
-										</View>
+											>{`${index + 1} ) ${step}`}
+											</Text>
+									</View>
 									);
 								})}
 						</View>
