@@ -234,11 +234,11 @@ export const recipeList = [
 		calories: "A lot of cal",
 		color: "#006A4E",
 		description:
-			"A wonderful holiday ham that will not melt in your mouth, but will bless your home with aromatic flavor",
+			"Looking to add a unique touch to your holiday table? This holiday ham is the showstopper you've been searching for! This mouthwatering recipe combines classic holiday ingredients with a surprising twist. As it slow-cooks, your home will be filled with the incredible aroma of the festivities to come.",
 		steps: [
 			"Place ham shank in roasting pan",
 			"Cut off and set excess fat in pan",
-			"Place cloves about 3-4 inches from eachother",
+			"Score ham and place cloves about 3-4 inches from eachother",
 			"Use toothpicks to place and hold pineapple slices",
 			"Drizzle kero syrup, brown sugar, honey, and lastly the Dr. Pepper.",
 			"Place in oven at 200˚Farenheit for 6 to 12 hours",
@@ -246,6 +246,10 @@ export const recipeList = [
 			"Cut manageable sized pieces of meat off the bone, then remove bone entirely, and put meat back in the pan",
 			"Put pan back into the oven while oven cools. The ham will soak up the juices and stay warm for serving",
 		],
+		meta:
+			"Elevate your holiday feast with an irresistible glazed ham recipe! Slow-cooked to perfection with a blend of ham shoulder, pineapple, cloves, honey, kero syrup, and a secret ingredient - Dr Pepper. Unveil a symphony of flavors as your house fills with the enticing aroma of this extraordinary ham. Discover a new holiday tradition with our easy-to-follow recipe that cooks for 6 to 10 hours at 200°F. Your guests won't believe their taste buds!",
+		conclusion:
+			"So get ready to impress your guests with a holiday ham like no other! Make this recipe your new tradition and savor the joy of the season with every incredible bite."
 	},
 	{
 		id: "02",

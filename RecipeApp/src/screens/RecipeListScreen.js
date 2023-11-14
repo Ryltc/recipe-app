@@ -23,20 +23,20 @@ const RecipeListScreen = () => {
     <SafeAreaView style={{ backgroundColor: "#5e3c2c", flex: 1, paddingHorizontal: 20, marginTop: 50 }}>
       <Animated.View style={{ transform: [{ translateY: translateHeader }] }}>
         {/* render header */}
-        <Header headerText={`Hey Chef, what's on the menu?`} headerIcon="bell-o" />
+        <Header style={{ color: "#fff" }} headerText={`Hey Chef, what's on the menu?`} />
           <View style={{ padding: 20, color: "#3c444c" }}>
             <View>
             </View>
             {scrollY._value < scrollThreshold && (
               <View>
-                <Text style={{ fontSize: 22, fontWeight: "300" }}>Seasoning</Text>
+                <Text style={{ fontSize: 22, fontWeight: "300", color: "#fff" }}>Seasoning</Text>
                 {/* seasoning list */}
                 <SeasoningCard />
               </View>
             )}
             {scrollY._value < scrollThreshold && (
               <View>
-                <Text style={{ fontSize: 22, fontWeight: "300" }}>Sauces and Dips</Text>
+                <Text style={{ fontSize: 22, fontWeight: "300", color: "#fff" }}>Sauces and Dips</Text>
                 {/* sauce and dip list */}
                 <SauceCard />
               </View>
@@ -63,7 +63,7 @@ const RecipeListScreen = () => {
       >
       {/* recipe list filter */}
       <View style={{ marginTop: 5, flex: 1 }}>
-        <Text style={{ fontSize: 22, fontWeight: "300" }}>Recipes</Text>
+        <Text style={{ fontSize: 22, fontWeight: "300", color: "#fff" }}>Recipes</Text>
         {/* Container for the recipe card area */}
         <View style={{ flex: 1 }}>
           {/* recipe list */}

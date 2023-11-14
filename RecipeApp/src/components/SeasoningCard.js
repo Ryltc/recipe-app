@@ -32,6 +32,7 @@ const SeasoningCard = () => {
 								style={{
 									fontSize: 18,
 									fontWeight: 400,
+									color: "#fff",
 								}}
 							>{item.name}</Text>
 						</View>

@@ -28,9 +28,9 @@ const RecipeCard = () => {
 					>
 						<Image
 							source={item.image}
-							style={{ width: 150, height: 150, resizeMode: "center" }}
+							style={{ width: 150, height: 150, resizeMode: "center", borderRadius: 400/ 2, }}
 						/>
-						<Text style={{ fontWeight: 400 }}>{item.name}</Text>
+						<Text style={{ fontWeight: 400, color: "#fff" }}>{item.name}</Text>
 						<View style={{ flexDirection: "row", marginTop: 8 }}>
 							<Text>{item.time}</Text>
 							<Text> | </Text>

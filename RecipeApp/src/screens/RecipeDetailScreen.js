@@ -87,14 +87,14 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 				</View>
 
 				{/* Recipe Name */}
-				<Text style={{ marginTop: 150, fontSize: 28, fontWeight: "bold" }}>
+				<Text style={{ marginTop: 150, fontSize: 28, fontWeight: "bold", color: "#FAF9F6" }}>
 					{item.name}
 				</Text>
 
 				<View style={{ flex: 1 }}>
 					<ScrollView showsVerticalScrollIndicator={false}>
 						{/* Recipe Description */}
-						<Text style={{ fontSize: 20, marginVertical: 16 }}>
+						<Text style={{ fontSize: 20, marginVertical: 16, color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}>
 							{item.description}
 						</Text>
 
@@ -119,7 +119,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 								}}
 							>
 								<Text style={{ fontSize: 40 }}>⏰</Text>
-								<Text style={{ fontSize: 20, fontWeight: 400 }}>
+								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6", fontFamily: 'Cochin' }}>
 									{item.time}
 								</Text>
 							</View>
@@ -135,7 +135,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 								}}
 							>
 								<Text style={{ fontSize: 40 }}>🥣</Text>
-								<Text style={{ fontSize: 20, fontWeight: 400 }}>
+								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6", fontFamily: 'Cochin' }}>
 									{item.difficulty}
 								</Text>
 							</View>
@@ -150,7 +150,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 								}}
 							>
 								<Text style={{ fontSize: 40 }}>🔥</Text>
-								<Text style={{ fontSize: 20, fontWeight: "400" }}>
+								<Text style={{ fontSize: 20, fontWeight: "400", color: "#FAF9F6", fontFamily: 'Cochin' }}>
 									{item.calories}
 								</Text>
 							</View>
@@ -160,7 +160,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
 							<Text
-								style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}
+								style={{ fontSize: 22, fontWeight: "600", marginBottom: 6, color: "#FAF9F6", fontFamily: 'Cochin' }}
 							>
 								Ingredients:
 							</Text>
@@ -188,7 +188,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 												value={checkedIngredients.includes(ingredient)}
 												onValueChange={() => handleIngredientChange(ingredient)}
 											/>
-											<Text style={{ fontSize: 18, marginLeft: 6, fontWeight: 700 }}>
+											<Text style={{ fontSize: 18, marginLeft: 6, fontWeight: 700, color: "#FAF9F6", fontFamily: 'Cochin' }}>
 												{ingredient}
 											</Text>
 									</View>
@@ -200,7 +200,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
 							<Text
-								style={{ fontSize: 22, fontWeight: "600" }}
+								style={{ fontSize: 22, fontWeight: 600, color: "#FAF9F6", fontFamily: 'Cochin' }}
 							>
 								Steps:
 							</Text>
@@ -221,13 +221,28 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 												onValueChange={() => handleStepChange(step)}
 											/>
 											<Text
-												style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
+												style={{ fontSize: 18, marginLeft: 6, marginVertical: 6, color: "#FAF9F6", fontWeight: 700, fontFamily: 'Cochin' }}
 												key={index}
 											>{`${index + 1} ) ${step}`}
 											</Text>
 									</View>
 								);
 							})}
+						</View>
+
+						{/* META and Description: SEO for web integration */}
+
+						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
+							<Text
+								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}
+							>
+								{item.meta}
+							</Text>
+							<Text
+								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}
+							>
+								{item.conclusion}
+							</Text>
 						</View>
 					</ScrollView>
 				</View>
