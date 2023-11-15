@@ -31,7 +31,7 @@ const SauceDetailScreen = ({ navigation, route }) => {
 	  };
 
 	return (
-		<View style={{ backgroundColor: "#121212", flex: 1 }}>
+		<View style={{ backgroundColor: item.color, flex: 1 }}>
 			<SafeAreaView style={{ flexDirection: "row", marginHorizontal: 16, marginTop: 50 }}>
 				<Pressable style={{ flex: 1 }} onPress={() => navigation.goBack()}>
 					<FontAwesome name={"arrow-circle-left"} size={28} color="white" />

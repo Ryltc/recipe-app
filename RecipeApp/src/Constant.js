@@ -69,6 +69,7 @@ export const spiceList = [
 			"1/4 cup of water"],
 		time: "10 minutes",
 		difficulty: "Easy",
+		color: "#00209f",
 		description: "A seasoning staple of Haitian cuisine.",
 		steps: [
 			"Cut everything into managable pieces to fit together in a tall blender.",
