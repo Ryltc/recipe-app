@@ -160,7 +160,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
 							<Text
-								style={{ fontSize: 22, fontWeight: "600", marginBottom: 6, color: "#FAF9F6", fontFamily: 'Cochin' }}
+								style={{ fontSize: 22, fontWeight: 400, marginBottom: 6, color: "#FAF9F6", }}
 							>
 								Ingredients:
 							</Text>
@@ -188,7 +188,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 												value={checkedIngredients.includes(ingredient)}
 												onValueChange={() => handleIngredientChange(ingredient)}
 											/>
-											<Text style={{ fontSize: 18, marginLeft: 6, fontWeight: 700, color: "#FAF9F6", fontFamily: 'Cochin' }}>
+											<Text style={{ fontSize: 18, marginLeft: 6, marginRight: 6, fontWeight: 300, color: "#FAF9F6", fontFamily: 'Cochin' }}>
 												{ingredient}
 											</Text>
 									</View>
@@ -198,9 +198,9 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 
 						{/* Recipe Steps */}
 
-						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
+						<View style={{ alignSelf: "flex-start", marginVertical: 22, marginRight: 16, }}>
 							<Text
-								style={{ fontSize: 22, fontWeight: 600, color: "#FAF9F6", fontFamily: 'Cochin' }}
+								style={{ fontSize: 22, fontWeight: 300, color: "#FAF9F6", }}
 							>
 								Steps:
 							</Text>
@@ -221,7 +221,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 												onValueChange={() => handleStepChange(step)}
 											/>
 											<Text
-												style={{ fontSize: 18, marginLeft: 6, marginVertical: 6, color: "#FAF9F6", fontWeight: 700, fontFamily: 'Cochin' }}
+												style={{ flexShrink: 1, fontSize: 18, fontWeight: 700, marginLeft: 6, marginRight: 6, marginVertical: 6, color: "#FAF9F6", fontWeight: 300, fontFamily: 'Cochin' }}
 												key={index}
 											>{`${index + 1} ) ${step}`}
 											</Text>

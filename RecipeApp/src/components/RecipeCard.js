@@ -31,17 +31,18 @@ const RecipeCard = () => {
 							style={{ width: 150, height: 150, resizeMode: "center", borderRadius: 400/ 2, }}
 						/>
 						<Text style={{ fontWeight: 400, color: "#fff" }}>{item.name}</Text>
-						<View style={{ flexDirection: "row", marginTop: 8 }}>
-							<Text>{item.time}</Text>
-							<Text> | </Text>
-							<View style={{ flexDirection: "row" }}>
+						<View style={{ flexDirection: "row", marginTop: 8, alignContent: "center", alignItems: "center" }}>
+							<Text style={{ color: "#FAF9F6" }}>Time: </Text>
+							<Text style={{ color: "#FAF9F6" }}>{item.time} </Text>
+							{/*<Text> | </Text>
+								<View style={{ flexDirection: "row" }}>
 								<Text style={{ marginRight: 4 }}>{item.rating}</Text>
 								<FontAwesome
 									name="star"
 									size={16}
 									color={colors.COLOR_PRIMARY}
 								/>
-							</View>
+							</View>*/}
 						</View>
 					</Pressable>
 				)}
