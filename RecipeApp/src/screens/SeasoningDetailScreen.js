@@ -41,7 +41,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 			</SafeAreaView>
 			<View
 				style={{
-					backgroundColor: "#6c9e4f",
+					backgroundColor: "#708238",
 					flex: 1,
 					marginTop: 140,
 					borderTopLeftRadius: 56,
@@ -72,14 +72,14 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 				</View>
 
 				{/* Recipe Name */}
-				<Text style={{ marginTop: 150, fontSize: 28, fontWeight: "bold" }}>
+				<Text style={{ marginTop: 150, fontSize: 28, fontWeight: "bold", color: "#FAF9F6" }}>
 					{item.name}
 				</Text>
 
 				<View style={{ flex: 1 }}>
 					<ScrollView showsVerticalScrollIndicator={false}>
 						{/* Recipe Description */}
-						<Text style={{ fontSize: 20, marginVertical: 16 }}>
+						<Text style={{ fontSize: 20, marginVertical: 16, color: "#FAF9F6", fontStyle: 'italic' }}>
 							{item.description}
 						</Text>
 
@@ -88,7 +88,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 						<View
 							style={{
 								flexDirection: "row",
-								justifyContent: "space-between",
+								justifyContent: "space-evenly",
 								// width: "100%",
 								// backgroundColor: "green",
 							}}
@@ -104,7 +104,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 								}}
 							>
 								<Text style={{ fontSize: 40 }}>⏰</Text>
-								<Text style={{ fontSize: 20, fontWeight: 400 }}>
+								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6" }}>
 									{item.time}
 								</Text>
 							</View>
@@ -120,7 +120,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 								}}
 							>
 								<Text style={{ fontSize: 40 }}>🥣</Text>
-								<Text style={{ fontSize: 20, fontWeight: 400 }}>
+								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6" }}>
 									{item.difficulty}
 								</Text>
 							</View>
@@ -130,7 +130,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
 							<Text
-								style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}
+								style={{ fontSize: 22, fontWeight: 600, marginBottom: 6, color: "#FAF9F6" }}
 							>
 								Ingredients:
 							</Text>
@@ -158,7 +158,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 												value={checkedIngredients.includes(ingredient)}
 												onValueChange={() => handleIngredientChange(ingredient)}
 											/>
-											<Text style={{ fontSize: 18, marginLeft: 6 }}>
+											<Text style={{ fontSize: 18, marginLeft: 6, color: "#FAF9F6" }}>
 												{ingredient}
 											</Text>
 									</View>
@@ -171,7 +171,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
 							<View style={{ flexDirection: 'row', marginBottom: 20, }}></View>
 								<Text
-									style={{ fontSize: 22, fontWeight: "600", marginBottom: 6 }}
+									style={{ fontSize: 22, fontWeight: "600", marginBottom: 6, color: "#FAF9F6" }}
 								>
 									Steps:
 								</Text>
@@ -192,13 +192,28 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 												onValueChange={() => handleStepChange(step)}
 											/>
 											<Text
-												style={{ fontSize: 18, marginLeft: 6, marginVertical: 6 }}
+												style={{ fontSize: 18, marginLeft: 6, marginVertical: 6, color: "#FAF9F6" }}
 												key={index}
 											>{`${index + 1} ) ${step}`}
 											</Text>
 									</View>
 									);
 								})}
+						</View>
+
+						{/* meta and conclusion */}
+
+						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
+							<Text
+								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}
+							>
+								{item.meta}
+							</Text>
+							<Text
+								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}
+							>
+								{item.conclusion}
+							</Text>
 						</View>
 					</ScrollView>
 				</View>

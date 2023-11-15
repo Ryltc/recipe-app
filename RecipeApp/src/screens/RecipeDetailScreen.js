@@ -31,20 +31,6 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 	const ingredientImages = recipeIngredients[item.folder];
 	console.log("Ingredient Images:", ingredientImages);
 
-	//const getIngredientImages = (recipeName) => {
-	//	// Import the ingredient images based on the recipe name
-	//	return require(`../assets/images/ingredients/${recipeName}`);
-	//  };
-
-	//const ingredientImages = getIngredientImages(item.folder);
-
-	//{item.ingredients.map((ingredient, index) => {
-	//	const imageExtension = ingredient === item.ingredients[0] ? 'png' : 'jpg';
-		//const imagePath = `../assets/images/ingredients/${item.folder}/${ingredient}.${imageExtension}`;
-	//	const isSelected = checkedIngredients.includes(ingredient);
-	//}
-//}
-
 	return (
 		<View style={{ backgroundColor: item.color, flex: 1 }}>
 			<SafeAreaView style={{ flexDirection: "row", marginHorizontal: 16, marginTop: 50 }}>
