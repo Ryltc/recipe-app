@@ -348,7 +348,7 @@ export const recipeList = [
 		image: require("../assets/images/chicken.png"),
 		rating: "2.2",
 		ingredients: ["Chicken Breasts", "Salt", "Black Pepper", "Olive Oil"],
-		time: "00:45 minutes",
+		time: "45 minutes",
 		difficulty: "Medium",
 		calories: "450 cal",
 		color: "#8d4004",

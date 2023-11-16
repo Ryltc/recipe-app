@@ -32,7 +32,7 @@ const RecipeCard = () => {
 						/>
 						<Text style={{ fontWeight: 400, color: "#fff" }}>{item.name}</Text>
 						<View style={{ flexDirection: "row", marginTop: 8, alignContent: "center", alignItems: "center" }}>
-							<Text style={{ color: "#FAF9F6" }}>Time: </Text>
+							<Text style={{ color: "#FAF9F6" }}>⏰ </Text>
 							<Text style={{ color: "#FAF9F6" }}>{item.time} </Text>
 							{/*<Text> | </Text>
 								<View style={{ flexDirection: "row" }}>
