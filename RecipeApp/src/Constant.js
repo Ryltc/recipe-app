@@ -54,6 +54,7 @@ export const spiceList = [
 	{
 		id: "01",
 		name: "Epis",
+		chef: "M. Syvain",
 		image: require("../assets/images/episabove.png"),
 		rating: "5.0",
 		ingredients: [
