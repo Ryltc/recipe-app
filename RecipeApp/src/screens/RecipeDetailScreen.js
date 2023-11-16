@@ -76,6 +76,10 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 				<Text style={{ marginTop: 150, fontSize: 28, fontWeight: "bold", color: "#FAF9F6" }}>
 					{item.name}
 				</Text>
+				<Text style={{ paddingBottom: 2, marginTop: 2, fontSize: 20, fontStyle: 'italic', color: "#FAF9F6" }}>
+					Chef: {item.chef}
+				</Text>
+				<Text style={styles.textRegister}> ──────────────────────────────── </Text>
 
 				<View style={{ flex: 1 }}>
 					<ScrollView showsVerticalScrollIndicator={false}>

@@ -133,6 +133,7 @@ export const sauceList = [
 	{
 		id: "01",
 		name: "Pini Cheese",
+		chef: "E. Williams",
 		image: require("../assets/images/pini-cheese.jpg"),
 		rating: "5.0",
 		ingredients: [
@@ -148,17 +149,22 @@ export const sauceList = [
 			"1/4 cup of water"],
 		time: "10 minutes",
 		difficulty: "Easy",
-		description: "Cheese dip that goes great with celery or crackers. *Chef Recommendation: Maztos Crackers*",
+		description: "Introducing an irresistible Pini Cheese recipe, a must-have appetizer for your entertaining needs! This delectable dish starts with a creamy base of cream cheese harmoniously blended with piquant blue cheese. What makes it truly special are the layers of flavors brought in by zesty Dijon mustard, tangy Worcestershire sauce, briny green olives, and just the right kick of Tabasco. Get ready to delight your guests with a tantalizing appetizer that's both easy to make and impossible to resist!",
 		steps: [
 			"Make sure ingredients are at room temperature so mixing is easier",
-			"If using stand mixer, start adding cheese and butter in slowly",
-			"Add the rest of the ingredients and mix",
-			"Can be eaten immediately, but letting sit for a couple days lets the flavors set in better"
+			"Blend cream cheese and butter until smooth, forming the creamy base of your Pini Cheese",
+			"Add the blue cheese, bit by bit until fully blended",
+			"Add a dollop of Dijon mustard, a dash of Worcestershire sauce, chopped green olives, and a hint of Tabasco sauce. Mix thoroughly to ensure every bite is bursting with flavor",
+			"Place mixture in a sealable container, or a bowl with plastic wrap, and let it chill in the refrigerator for a few hours. When ready to serve, present this flavorful creation with crackers, or celery.",
 		],
+		meta:
+			"Elevate your appetizer game with this Pini Cheese recipe! This crowd-pleasing delight combines creamy cream cheese and bold blue cheese with a medley of flavors from zesty Dijon mustard, tangy Worcestershire sauce, briny green olives, and a kick of Tabasco. Quick to make and bursting with taste, it's the perfect appetizer for any gathering!",
+		conclusion:
+			"So prepare to impress with a harmonious blend of creaminess and bold flavors. A guaranteed crowd pleaser. Easy to make and bursting with taste, promising compliments and empty plates!"
 	},
 	{
 		id: "02",
-		name: "Mock Chicken Sauce",
+		name: "Chicken Filet Sauce",
 		//image: require("../assets/images/pinicheese.png"),
 		rating: "5.0",
 		ingredients: [
@@ -176,7 +182,7 @@ export const sauceList = [
 	},
 	{
 		id: "03",
-		name: "Mock Hottie Sauce",
+		name: "Baddie Sauce",
 		//image: require("../assets/images/pinicheese.png"),
 		rating: "5.0",
 		ingredients: [
@@ -225,6 +231,7 @@ export const recipeList = [
 	{
 		id: "01",
 		name: "Holiday Ham",
+		chef: "T. Slocumb",
 		folder: "holiday-ham",
 		image: require("../assets/images/ham-postcook.jpg"),
 		rating: "5.0",
@@ -262,6 +269,7 @@ export const recipeList = [
 	{
 		id: "02",
 		name: "Haitian Spaghetti",
+		chef: "SP Sylvain/H. Williams",
 		image: require("../assets/images/Haitian-Spaghetti.jpg"),
 		rating: "5.0",
 		ingredients: [
@@ -463,6 +471,30 @@ export const recipeList = [
 		],
 		time: "40 minutes",
 		difficulty: "Medium",
+		calories: "420 cal",
+		color: "#f39c12",
+		description:
+			"A classic Italian comfort food with layers of lasagna noodles, flavorful ground beef, rich ricotta cheese, and tangy tomato sauce.",
+		steps: [
+			"Cook the lasagna noodles according to package instructions.",
+			"Brown the ground beef in a skillet and season with spices.",
+			"Layer the lasagna noodles, beef, ricotta cheese, and tomato sauce in a baking dish.",
+			"Repeat the layers and bake in the oven until bubbly and golden.",
+			"Let it cool slightly before serving.",
+		],
+	},
+	{
+		id: "11",
+		name: "Easy BBQ Meatballs",
+		image: require("../assets/images/lasgana.png"),
+		rating: "3.6",
+		ingredients: [
+			"Frozen or Homemade meatballs",
+			"BBQ Sauce, we recommend Sweet Baby Rays",
+			"Welsh's Grape Jelly",
+		],
+		time: "40 minutes",
+		difficulty: "Easy",
 		calories: "420 cal",
 		color: "#f39c12",
 		description:
