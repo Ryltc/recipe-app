@@ -135,7 +135,7 @@ export const sauceList = [
 		id: "01",
 		name: "Pini Cheese",
 		chef: "E. Williams",
-		image: require("../assets/images/pini-cheese.jpg"),
+		image: require("../assets/images/pini_cheese.jpg"),
 		rating: "5.0",
 		ingredients: [
 			"8oz Cream Cheese",
@@ -150,6 +150,7 @@ export const sauceList = [
 			"1/4 cup of water"],
 		time: "10 minutes",
 		difficulty: "Easy",
+		color: "#D3B683",
 		description: "Introducing an irresistible Pini Cheese recipe, a must-have appetizer for your entertaining needs! This delectable dish starts with a creamy base of cream cheese harmoniously blended with piquant blue cheese. What makes it truly special are the layers of flavors brought in by zesty Dijon mustard, tangy Worcestershire sauce, briny green olives, and just the right kick of Tabasco. Get ready to delight your guests with a tantalizing appetizer that's both easy to make and impossible to resist!",
 		steps: [
 			"Make sure ingredients are at room temperature so mixing is easier",
@@ -166,7 +167,8 @@ export const sauceList = [
 	{
 		id: "02",
 		name: "Chicken Filet Sauce",
-		//image: require("../assets/images/pinicheese.png"),
+		chef: "C. Fil-A",
+		image: require("../assets/images/bigotchickensauce.jpg"),
 		rating: "5.0",
 		ingredients: [
 			"1/4 cup of honey",
@@ -176,7 +178,8 @@ export const sauceList = [
 			"1/2 cup of mayonnause or aoili"],
 		time: "5 minutes",
 		difficulty: "Easy",
-		description: "Easy mock chicken sauce *homophobia free!*",
+		color: "#B97D3A",
+		description: "Easy mock chicken sauce *homophobia free*",
 		steps: [
 			"Mix all ingredients and let sit in refrigerator for atleast an hour",
 		],
@@ -184,11 +187,12 @@ export const sauceList = [
 	{
 		id: "03",
 		name: "Baddie Sauce",
-		//image: require("../assets/images/pinicheese.png"),
+		chef: "M. Thee Stallion",
+		image: require("../assets/images/baddie.png"),
 		rating: "5.0",
 		ingredients: [
 			"1/2 cuo of water",
-			"1 teaspoon of cornstarch",
+			"1 teaspoon of cornstarch", 
 			"2/3 cup of granulated sugar",
 			"1/3 cup of Frank's RedHot Cayanne Pepper sauce",
 			"1/3 cup of light corn syrup",
@@ -197,6 +201,7 @@ export const sauceList = [
 			"1 tablespoon plus one teaspoon of apple cider vinegar"],
 		time: "5 minutes",
 		difficulty: "Easy",
+		color: "#4A0B05",
 		description: "Mock Hottie sauce, you know the one",
 		steps: [
 			"Mix cornstarch and water in a small saucepan",

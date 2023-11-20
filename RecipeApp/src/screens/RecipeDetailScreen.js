@@ -38,7 +38,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 					<FontAwesome name={"arrow-circle-left"} size={28} color="white" />
 				</Pressable>
 
-				<FontAwesome name={"heart-o"} size={28} color="white" />
+				{/*<FontAwesome name={"heart-o"} size={28} color="white" />*/}
 			</SafeAreaView>
 			<View
 				style={{
@@ -84,7 +84,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 				<View style={{ flex: 1 }}>
 					<ScrollView showsVerticalScrollIndicator={false}>
 						{/* Recipe Description */}
-						<Text style={{ fontSize: 20, marginVertical: 16, color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}>
+						<Text style={{ fontSize: 20, marginVertical: 16, color: "#FAF9F6", fontStyle: 'italic' }}>
 							{item.description}
 						</Text>
 
@@ -109,7 +109,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 								}}
 							>
 								<Text style={{ fontSize: 40 }}>⏰</Text>
-								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6", fontFamily: 'Cochin' }}>
+								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6" }}>
 									{item.time}
 								</Text>
 							</View>
@@ -125,7 +125,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 								}}
 							>
 								<Text style={{ fontSize: 40 }}>🥣</Text>
-								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6", fontFamily: 'Cochin' }}>
+								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6" }}>
 									{item.difficulty}
 								</Text>
 							</View>
@@ -140,7 +140,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 								}}
 							>
 								<Text style={{ fontSize: 40 }}>🔥</Text>
-								<Text style={{ fontSize: 20, fontWeight: "400", color: "#FAF9F6", fontFamily: 'Cochin' }}>
+								<Text style={{ fontSize: 20, fontWeight: "400", color: "#FAF9F6" }}>
 									{item.calories}
 								</Text>
 							</View>
@@ -178,7 +178,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 												value={checkedIngredients.includes(ingredient)}
 												onValueChange={() => handleIngredientChange(ingredient)}
 											/>
-											<Text style={{ fontSize: 18, marginLeft: 6, marginRight: 6, fontWeight: 300, color: "#FAF9F6", fontFamily: 'Cochin' }}>
+											<Text style={{ fontSize: 18, marginLeft: 6, marginRight: 6, fontWeight: 300, color: "#FAF9F6" }}>
 												{ingredient}
 											</Text>
 									</View>
@@ -211,7 +211,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 												onValueChange={() => handleStepChange(step)}
 											/>
 											<Text
-												style={{ flexShrink: 1, fontSize: 18, fontWeight: 700, marginLeft: 6, marginRight: 6, marginVertical: 6, color: "#FAF9F6", fontWeight: 300, fontFamily: 'Cochin' }}
+												style={{ flexShrink: 1, fontSize: 18, fontWeight: 700, marginLeft: 6, marginRight: 6, marginVertical: 6, color: "#FAF9F6", fontWeight: 300 }}
 												key={index}
 											>{`${index + 1} ) ${step}`}
 											</Text>
@@ -224,12 +224,12 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
 							<Text
-								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}
+								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontStyle: 'italic' }}
 							>
 								{item.meta}
 							</Text>
 							<Text
-								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}
+								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontStyle: 'italic' }}
 							>
 								{item.conclusion}
 							</Text>

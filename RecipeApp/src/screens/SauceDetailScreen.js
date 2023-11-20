@@ -37,7 +37,7 @@ const SauceDetailScreen = ({ navigation, route }) => {
 					<FontAwesome name={"arrow-circle-left"} size={28} color="white" />
 				</Pressable>
 
-				<FontAwesome name={"heart-o"} size={28} color="white" />
+				{/*<FontAwesome name={"heart-o"} size={28} color="white" />*/}
 			</SafeAreaView>
 			<View
 				style={{
@@ -109,7 +109,7 @@ const SauceDetailScreen = ({ navigation, route }) => {
 								}}
 							>
 								<Text style={{ fontSize: 40 }}>⏰</Text>
-								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6", fontFamily: 'Cochin' }}>
+								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6" }}>
 									{item.time}
 								</Text>
 							</View>
@@ -125,7 +125,7 @@ const SauceDetailScreen = ({ navigation, route }) => {
 								}}
 							>
 								<Text style={{ fontSize: 40 }}>🥣</Text>
-								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6", fontFamily: 'Cochin' }}>
+								<Text style={{ fontSize: 20, fontWeight: 400, color: "#FAF9F6" }}>
 									{item.difficulty}
 								</Text>
 							</View>
@@ -210,12 +210,12 @@ const SauceDetailScreen = ({ navigation, route }) => {
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
 							<Text
-								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}
+								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontStyle: 'italic' }}
 							>
 								{item.meta}
 							</Text>
 							<Text
-								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}
+								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontStyle: 'italic' }}
 							>
 								{item.conclusion}
 							</Text>

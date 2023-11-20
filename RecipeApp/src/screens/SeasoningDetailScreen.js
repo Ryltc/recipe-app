@@ -37,7 +37,7 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 					<FontAwesome name={"arrow-circle-left"} size={28} color="white" />
 				</Pressable>
 
-				<FontAwesome name={"heart-o"} size={28} color="white" />
+				{/*<FontAwesome name={"heart-o"} size={28} color="white" />*/}
 			</SafeAreaView>
 			<View
 				style={{
@@ -210,12 +210,12 @@ const SeasoningDetailScreen = ({ navigation, route }) => {
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22 }}>
 							<Text
-								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}
+								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontStyle: 'italic' }}
 							>
 								{item.meta}
 							</Text>
 							<Text
-								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontFamily: 'Cochin', fontStyle: 'italic' }}
+								style={{ fontSize: 22, fontWeight: "600", color: "#FAF9F6", fontStyle: 'italic' }}
 							>
 								{item.conclusion}
 							</Text>
