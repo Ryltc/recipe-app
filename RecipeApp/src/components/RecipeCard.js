@@ -7,7 +7,6 @@ import { useNavigation } from "@react-navigation/native";
 const RecipeCard = () => {
 	const navigation = useNavigation();
 	return (
-		<View>
 			<FlatList
 				data={recipeList}
 				renderItem={({ item }) => (
@@ -52,7 +51,6 @@ const RecipeCard = () => {
 				}}
 				showsVerticalScrollIndicator={false}
 			/>
-		</View>
 	);
 };
 

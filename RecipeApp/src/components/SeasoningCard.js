@@ -7,7 +7,6 @@ import { useNavigation } from "@react-navigation/native";
 const SeasoningCard = () => {
 	const navigation = useNavigation();
 	return (
-		<View>
 			<FlatList
 				data={spiceList}
 				horizontal={true}
@@ -39,7 +38,6 @@ const SeasoningCard = () => {
 					</Pressable>
 				)}
 			/>
-		</View>
 	);
 };
 

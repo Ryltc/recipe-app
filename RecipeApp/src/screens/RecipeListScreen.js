@@ -24,24 +24,18 @@ const RecipeListScreen = () => {
       <Animated.View style={{ transform: [{ translateY: translateHeader }] }}>
         {/* render header */}
         <Header style={{ color: "#fff" }} headerText={`Hey Chef, what's on the menu?`} />
-          <View style={{ padding: 20, color: "#3c444c" }}>
+        <View style={{ padding: 20, color: "#3c444c" }}>
             <View>
+              <Text style={{ fontSize: 22, fontWeight: "300", color: "#fff" }}>Seasoning</Text>
+              {/* seasoning list */}
+              <SeasoningCard />
             </View>
-            {scrollY._value < scrollThreshold && (
-              <View>
-                <Text style={{ fontSize: 22, fontWeight: "300", color: "#fff" }}>Seasoning</Text>
-                {/* seasoning list */}
-                <SeasoningCard />
-              </View>
-            )}
-            {scrollY._value < scrollThreshold && (
-              <View>
-                <Text style={{ fontSize: 22, fontWeight: "300", color: "#fff" }}>Sauces and Dips</Text>
-                {/* sauce and dip list */}
-                <SauceCard />
-              </View>
-            )}
-          </View>
+            <View>
+              <Text style={{ fontSize: 22, fontWeight: "300", color: "#fff" }}>Sauces and Dips</Text>
+              {/* sauce and dip list */}
+              <SauceCard />
+            </View>
+        </View>
       </Animated.View>
 
       <Animated.ScrollView style={{
