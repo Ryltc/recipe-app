@@ -22,7 +22,7 @@ const WelcomeScreen = ( { navigation }) => {
                     fontSize: 42,
                     fontWeight: "bold",
                     color: "#3c444c",
-                    marginTop: 44,
+                    marginTop: 80,
                     marginBottom: 40,
                     }}
                 >
@@ -37,6 +37,7 @@ const WelcomeScreen = ( { navigation }) => {
                         paddingVertical: 18,
                         width: "80%",
                         alignItems: "center",
+                        marginTop: 80,
                     }}
                 >
                         <Text style={{
