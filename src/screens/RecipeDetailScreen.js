@@ -1,10 +1,13 @@
-import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, ScrollView, TouchableOpacity } from "react-native";
+import { Image, SafeAreaView, StyleSheet, Text, View, Pressable, Dimensions, ScrollView, TouchableOpacity, Button, TextInput } from "react-native";
 import React, {useState} from "react";
 import Checkbox from 'expo-checkbox';
 import { FontAwesome } from "@expo/vector-icons";
 //import ingredientImages from "../Constant";
 //import { recipeList } from "../Constant";
 import { recipeIngredients } from "../Constant";
+//import Timer from "../components/Timer";
+//import { TimerProvider } from './TimerContext';
+import { useTimer } from './TimerContext';
 
 const RecipeDetailScreen = ({ route, navigation }) => {
 	const { item } = route.params;
@@ -27,6 +30,30 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 		setCheckedSteps([...checkedSteps, step]);
 	  }
 	}
+
+	const RecipeDetailScreen = () => {
+		const { timers, addTimer, removeTimer, startTimer, updateTimer } = useTimer();
+
+		const [customTime, setCustomTime] = useState('');
+
+		const handleAddTimer = () => {
+		  const timeInSeconds = parseInt(customTime, 10);
+		  if (!isNaN(timeInSeconds) && timeInSeconds > 0) {
+			addTimer(timeInSeconds);
+			setCustomTime('');
+		  } else {
+			// Handle invalid input
+			alert('Please enter a valid time in seconds.');
+		  }
+		};
+
+		const handleRemoveTimer = (timerId) => {
+		  removeTimer(timerId);
+		};
+
+		const handleStartTimer = (timerId) => {
+		  startTimer(timerId);
+		};
 
 	const ingredientImages = recipeIngredients[item.folder];
 	console.log("Ingredient Images:", ingredientImages);
@@ -188,6 +215,23 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 
 						{/* Recipe Steps */}
 
+						<View>
+							{timers.map((timer) => (
+								<View key={timer.id}>
+								<Text>{timer.seconds}</Text>
+								<Button title="Start" onPress={() => handleStartTimer(timer.id)} />
+								<Button title="Remove" onPress={() => handleRemoveTimer(timer.id)} />
+								</View>
+							))}
+							<TextInput
+								placeholder="Enter time in seconds"
+								value={customTime}
+								onChangeText={(text) => setCustomTime(text)}
+								keyboardType="numeric"
+							/>
+							<Button title="Add Custom Timer" onPress={handleAddTimer} />
+						</View>
+
 						<View style={{ alignSelf: "flex-start", marginVertical: 22, marginRight: 16, }}>
 							<Text
 								style={{ fontSize: 22, fontWeight: 300, color: "#FAF9F6", }}
@@ -197,28 +241,28 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 							{item.steps.map((step, index) => {
 								return (
 									<View
-									style={{
-										flexDirection: "row",
-										alignItems: "center",
-										marginVertical: 4,
-									}}
-									key={index}
-								>
+										style={{
+											flexDirection: "row",
+											alignItems: "center",
+											marginVertical: 4,
+										}}
+										key={index}
+										>
 										<Checkbox
 												style={styles.checkbox}
 												color="#00FF00"
 												value={checkedSteps.includes(step)}
 												onValueChange={() => handleStepChange(step)}
-											/>
-											<Text
-												style={{ flexShrink: 1, fontSize: 18, fontWeight: 700, marginLeft: 6, marginRight: 6, marginVertical: 6, color: "#FAF9F6", fontWeight: 300 }}
-												key={index}
+										/>
+										<Text
+											style={{ flexShrink: 1, fontSize: 18, fontWeight: 700, marginLeft: 6, marginRight: 6, marginVertical: 6, color: "#FAF9F6", fontWeight: 300 }}
+											key={index}
 											>{`${index + 1} ) ${step}`}
-											</Text>
+										</Text>
 									</View>
-								);
-							})}
-						</View>
+									);
+								})}
+							</View>
 
 						{/* META and Description: SEO for web integration */}
 
@@ -239,7 +283,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 			</View>
 		</View>
 	);
-};
+}};
 
 export default RecipeDetailScreen;
 const styles = StyleSheet.create({});
