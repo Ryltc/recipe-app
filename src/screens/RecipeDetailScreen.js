@@ -7,7 +7,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { recipeIngredients } from "../Constant";
 //import Timer from "../components/Timer";
 //import { TimerProvider } from './TimerContext';
-import { useTimer } from './TimerContext';
+import { useTimer } from '../components/TimerContext';
 
 const RecipeDetailScreen = ({ route, navigation }) => {
 	const { item } = route.params;
@@ -31,29 +31,28 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 	  }
 	}
 
-	const RecipeDetailScreen = () => {
-		const { timers, addTimer, removeTimer, startTimer, updateTimer } = useTimer();
+	const { timers, addTimer, removeTimer, startTimer, updateTimer } = useTimer();
 
-		const [customTime, setCustomTime] = useState('');
+	const [customTime, setCustomTime] = useState('');
 
-		const handleAddTimer = () => {
-		  const timeInSeconds = parseInt(customTime, 10);
-		  if (!isNaN(timeInSeconds) && timeInSeconds > 0) {
-			addTimer(timeInSeconds);
-			setCustomTime('');
-		  } else {
-			// Handle invalid input
-			alert('Please enter a valid time in seconds.');
-		  }
-		};
+	const handleAddTimer = () => {
+	  const timeInMinutes = parseInt(customTime, 10);
+	  if (!isNaN(timeInMinutes) && timeInMinutes > 0) {
+		addTimer(timeInMinutes);
+		setCustomTime('');
+	  } else {
+		// Handle invalid input
+		alert('Please enter a valid time in minutes.');
+	  }
+	};
 
-		const handleRemoveTimer = (timerId) => {
-		  removeTimer(timerId);
-		};
+	const handleRemoveTimer = (timerId) => {
+	  removeTimer(timerId);
+	};
 
-		const handleStartTimer = (timerId) => {
-		  startTimer(timerId);
-		};
+	const handleStartTimer = (timerId) => {
+	  startTimer(timerId);
+	};
 
 	const ingredientImages = recipeIngredients[item.folder];
 	console.log("Ingredient Images:", ingredientImages);
@@ -218,13 +217,13 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 						<View>
 							{timers.map((timer) => (
 								<View key={timer.id}>
-								<Text>{timer.seconds}</Text>
+								<Text>{timer.minutes}</Text>
 								<Button title="Start" onPress={() => handleStartTimer(timer.id)} />
 								<Button title="Remove" onPress={() => handleRemoveTimer(timer.id)} />
 								</View>
 							))}
 							<TextInput
-								placeholder="Enter time in seconds"
+								placeholder="Enter time in minutes"
 								value={customTime}
 								onChangeText={(text) => setCustomTime(text)}
 								keyboardType="numeric"
@@ -283,7 +282,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 			</View>
 		</View>
 	);
-}};
+};
 
 export default RecipeDetailScreen;
 const styles = StyleSheet.create({});

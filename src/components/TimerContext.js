@@ -5,25 +5,27 @@ const TimerContext = createContext();
 
 export const TimerProvider = ({ children }) => {
   const [timers, setTimers] = useState([]);
+  const [isRunning, setIsRunning] = useState(false);
 
   const addTimer = (duration) => {
-    setTimers([...timers, { id: Date.now(), duration, seconds: duration, isRunning: false }]);
+    setTimers([...timers, { id: Date.now(), duration, minutes: duration, isRunning: false }]);
   };
 
   const removeTimer = (timerId) => {
     setTimers(timers.filter((timer) => timer.id !== timerId));
   };
 
-  const updateTimer = (timerId, seconds) => {
+  const updateTimer = (timerId, minutes) => {
     setTimers((prevTimers) =>
       prevTimers.map((timer) =>
-        timer.id === timerId ? { ...timer, seconds } : timer
+        timer.id === timerId ? { ...timer, minutes } : timer
       )
     );
   };
 
   const startTimer = (timerId) => {
-    updateTimer(timerId, timers.find((timer) => timer.id === timerId).seconds);
+    updateTimer(timerId, timers.find((timer) => timer.id === timerId).minutes);
+    setIsRunning(true);
   };
 
   return (
