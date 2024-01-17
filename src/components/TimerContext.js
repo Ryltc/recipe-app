@@ -18,7 +18,7 @@ export const TimerProvider = ({ children }) => {
               return { ...timer, seconds: timer.seconds - 1 };
             } else if (timer.isRunning && timer.seconds === 0) {
               setTimerExpired(true);
-              timer.isRunning = false;
+              setIsRunning(false);
             }
             return timer;
           })
@@ -39,13 +39,17 @@ export const TimerProvider = ({ children }) => {
 
   const startTimer = (timerId) => {
     setTimers((prevTimers) =>
-      prevTimers.map((timer) => {
-        if (timer.id === timerId) {
-          return { ...timer, isRunning: true };
-        }
-        return timer;
-      })
-    );
+  prevTimers.map((timer) => {
+    if (timer.isRunning && timer.seconds > 0) {
+      return { ...timer, seconds: timer.seconds - 1 };
+    } else if (timer.isRunning && timer.seconds === 0) { 
+      setTimerExpired(true);
+      return { ...timer, isRunning: false }; // Return a new object with updated isRunning
+    }
+    return timer;
+  })
+);
+
     setIsRunning(true);
   };
 
