@@ -23,35 +23,17 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 	  }
 	};
 
-	const handleStepChange = (step) => {
-	  if (checkedSteps.includes(step)) {
-		setCheckedSteps(checkedSteps.filter((item) => item !== step));
-	  } else {
-		setCheckedSteps([...checkedSteps, step]);
-	  }
-	}
-
 	const { timers, addTimer, removeTimer, startTimer, updateTimer } = useTimer();
+  	const [customTime, setCustomTime] = React.useState('');
 
-	const [customTime, setCustomTime] = useState('');
+	const formatTime = (timeInSeconds) => {
+		if (typeof timeInSeconds !== 'number' || isNaN(timeInSeconds) || timeInSeconds < 0) {
+		return '00:00';
+		}
 
-	const handleAddTimer = () => {
-	  const timeInMinutes = parseInt(customTime, 10);
-	  if (!isNaN(timeInMinutes) && timeInMinutes > 0) {
-		addTimer(timeInMinutes);
-		setCustomTime('');
-	  } else {
-		// Handle invalid input
-		alert('Please enter a valid time in minutes.');
-	  }
-	};
-
-	const handleRemoveTimer = (timerId) => {
-	  removeTimer(timerId);
-	};
-
-	const handleStartTimer = (timerId) => {
-	  startTimer(timerId);
+		const minutes = Math.floor(timeInSeconds / 60);
+		const seconds = timeInSeconds % 60;
+		return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 	};
 
 	const ingredientImages = recipeIngredients[item.folder];
@@ -217,18 +199,18 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 						<View>
 							{timers.map((timer) => (
 								<View key={timer.id}>
-								<Text>{timer.minutes}</Text>
-								<Button title="Start" onPress={() => handleStartTimer(timer.id)} />
-								<Button title="Remove" onPress={() => handleRemoveTimer(timer.id)} />
+								<Text>{formatTime(timer.seconds)}</Text>
+								<Button title="Start" onPress={() => startTimer(timer.id)} />
+								<Button title="Remove" onPress={() => removeTimer(timer.id)} />
 								</View>
 							))}
-							<TextInput
-								placeholder="Enter time in minutes"
-								value={customTime}
-								onChangeText={(text) => setCustomTime(text)}
-								keyboardType="numeric"
-							/>
-							<Button title="Add Custom Timer" onPress={handleAddTimer} />
+								<TextInput
+									placeholder="Enter time in seconds"
+									value={customTime}
+									onChangeText={(text) => setCustomTime(text)}
+									keyboardType="numeric"
+								/>
+								<Button title="Add Custom Timer" onPress={() => addTimer(parseInt(customTime, 10))} />
 						</View>
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22, marginRight: 16, }}>
