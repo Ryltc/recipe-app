@@ -8,6 +8,8 @@ import RecipeDetailScreen from '../screens/RecipeDetailScreen';
 import SeasoningDetailScreen from '../screens/SeasoningDetailScreen';
 import SauceDetailScreen from '../screens/SauceDetailScreen';
 import { TimerProvider } from '../components/TimerContext';
+import TimerAlarm from "../components/TimerAlarm";
+
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
