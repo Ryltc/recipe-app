@@ -8,6 +8,8 @@ import { recipeIngredients } from "../Constant";
 //import Timer from "../components/Timer";
 //import { TimerProvider } from './TimerContext';
 import { useTimer } from '../components/TimerContext';
+import { TimerAlarm } from '../components/TimerAlarm';
+
 
 const RecipeDetailScreen = ({ route, navigation }) => {
 	const { item } = route.params;
@@ -23,7 +25,7 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 	  }
 	};
 
-	const { timers, addTimer, removeTimer, startTimer, updateTimer } = useTimer();
+	const { timers, addTimer, removeTimer, startTimer, updateTimer, timerExpired } = useTimer();
   	const [customTime, setCustomTime] = React.useState('');
 
 	const formatTime = (timeInSeconds) => {
@@ -204,14 +206,20 @@ const RecipeDetailScreen = ({ route, navigation }) => {
 								<Button title="Remove" onPress={() => removeTimer(timer.id)} />
 								</View>
 							))}
+							<View>
+								<Text>Enter time in seconds:</Text>
 								<TextInput
-									placeholder="Enter time in seconds"
-									value={customTime}
-									onChangeText={(text) => setCustomTime(text)}
-									keyboardType="numeric"
+								placeholder="Enter time in seconds"
+								value={customTime}
+								onChangeText={(text) => setCustomTime(text)}
+								keyboardType="numeric"
 								/>
 								<Button title="Add Custom Timer" onPress={() => addTimer(parseInt(customTime, 10))} />
+							</View>
+							{/* Modal for Timer Expiry */}
+							{timerExpired && <TimerAlarm onClose={() => setTimerExpired(false)} />}
 						</View>
+
 
 						<View style={{ alignSelf: "flex-start", marginVertical: 22, marginRight: 16, }}>
 							<Text

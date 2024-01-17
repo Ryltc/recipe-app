@@ -6,7 +6,7 @@ const TimerContext = createContext();
 export const TimerProvider = ({ children }) => {
   const [timers, setTimers] = useState([]);
   const [isRunning, setIsRunning] = useState(false);
-
+  const [timerExpired, setTimerExpired] = useState(false);
   useEffect(() => {
     let timerInterval;
 
@@ -16,6 +16,9 @@ export const TimerProvider = ({ children }) => {
           prevTimers.map((timer) => {
             if (timer.isRunning && timer.seconds > 0) {
               return { ...timer, seconds: timer.seconds - 1 };
+            } else if (timer.isRunning && timer.seconds === 0) {
+              setTimerExpired(true);
+              timer.isRunning = false;
             }
             return timer;
           })
@@ -55,7 +58,7 @@ export const TimerProvider = ({ children }) => {
   };
 
   return (
-    <TimerContext.Provider value={{ timers, addTimer, removeTimer, startTimer, updateTimer }}>
+    <TimerContext.Provider value={{ timers, addTimer, removeTimer, startTimer, updateTimer, timerExpired }}>
       {children}
     </TimerContext.Provider>
   );
