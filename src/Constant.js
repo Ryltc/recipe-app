@@ -42,7 +42,7 @@ export const categories = [
 	},
 	{
 		id: "09",
-		category: "Haitian",
+		category: "Haitian and Carribean",
 	},
 	{
 		id: "10",
@@ -209,6 +209,29 @@ export const sauceList = [
 			"Bring to boil on medium",
 			"Reduce and simmer for 5 minutes to let thicken",
 			"Remove from head and add vinegar",
+			"Cover and cool"
+		],
+	},
+	{
+		id: "04",
+		name: "Sticky nd Spicy",
+		chef: "H. Williams",
+		image: require("../assets/images/baddie.png"),
+		rating: "5.0",
+		ingredients: [
+			"1 tbsp of Eel Sauce (Sushi Sauce)",
+			"1 tbsp of Oyster Sauce", 
+			"1/2 tbsp of Siracha (Tobasco or Cholula work great as well)",
+			"1/2 tbsp of Ketchup",
+			"1 tsp of soy sauce",
+			"1 tbsp of honey",],
+		time: "5 minutes",
+		difficulty: "Easy",
+		color: "#4A0B05",
+		description: "Sticky and spicy sauce with a hint of sweetness",
+		steps: [
+			"Mix ingredients in any order",
+			"Heat in a small saucepan on medium heat for 5 minutes",
 			"Cover and cool"
 		],
 	},
